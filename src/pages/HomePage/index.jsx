@@ -1,10 +1,10 @@
 import React from 'react'
-import Header from '../../component/Header'
+import Sale from '../../component/Sale'
 
 export default function HomePage() {
   return (
     <div>
-        <Header />
+        <Sale/>
     </div>
   )
 }

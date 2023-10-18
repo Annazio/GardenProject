@@ -1,0 +1,32 @@
+.header{
+    margin-top: 20px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* не функционирует объединение   ?????*/
+/* .left_part .right_part{
+    align-items: center;
+} */
+
+.left_part{
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.right_part{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 175px;
+    align-items: center;
+}
+
+.right_part img{
+    width: 30px;
+    height: 30px;
+}

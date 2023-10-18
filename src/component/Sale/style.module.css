@@ -1,0 +1,22 @@
+.sale{
+    background-color: #A1E2EB;
+    min-height: 600px;
+    margin-top: 80px;
+}
+.sale_wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.left_wrapper{
+    color: var(--white);
+    font-weight: 700; 
+}
+.title_wrapper{
+    margin-top: 130px;
+}
+.title{
+    font-size: 80px;
+}
+.title_info{
+    font-size: 60px;
+}

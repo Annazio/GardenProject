@@ -6,19 +6,22 @@ import SingleCategoryPage from './pages/SingleCategoryPage';
 import SingleItemPage from './pages/SingleItemPage';
 import ShoppingCardPage from './pages/ShoppingCardPage';
 import NotFoundPage from './pages/NotFoundPage';
+import Wrap from './component/Wrap';
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <Routes>
-          <Route path ="/" element={<HomePage />}/>
-          <Route path ="/categories" element={<CategoriesPage />}/>
-          <Route path ="/singlecategory" element={<SingleCategoryPage />}/>
-          <Route path ="/singleitem" element={<SingleItemPage />}/>
-          <Route path ="/shoppingcard" element={<ShoppingCardPage />}/>
-          <Route path ="/notfound" element={<NotFoundPage />}/>
+        <Route path="/" element={<Wrap/>}>
+          <Route index element={<HomePage />}/>
+          <Route path ="categories" element={<CategoriesPage />}/>
+          <Route path ="singlecategory" element={<SingleCategoryPage />}/>
+          <Route path ="singleitem" element={<SingleItemPage />}/>
+          <Route path ="shoppingcard" element={<ShoppingCardPage />}/>
+          <Route path ="*" element={<NotFoundPage />}/>
+        </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 
