@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GardenProject/static/css/main.fff7dc73.css",
+    "main.js": "/GardenProject/static/js/main.46215f32.js",
+    "static/media/flowers.png": "/GardenProject/static/media/flowers.219152481630c1bc0f3f.png",
+    "static/media/shopping_bag.svg": "/GardenProject/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
+    "index.html": "/GardenProject/index.html",
+    "main.fff7dc73.css.map": "/GardenProject/static/css/main.fff7dc73.css.map",
+    "main.46215f32.js.map": "/GardenProject/static/js/main.46215f32.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fff7dc73.css",
+    "static/js/main.46215f32.js"
+  ]
+}
