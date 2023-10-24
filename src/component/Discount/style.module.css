@@ -1,0 +1,23 @@
+.discount{
+    background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+    min-height: 470px;
+    max-width: 1440px;
+    margin: auto;
+}
+.discount_wrapper{
+    display: flex;
+}
+
+.discount_text{
+    color: var(--white);
+    font-weight: 700;
+    font-size: 90px;
+    margin-bottom: 50px;
+    
+}
+
+.discount_text span{
+    font-size: 50px;
+}
+
+

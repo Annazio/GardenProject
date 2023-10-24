@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Footer() {
+  console.log(style.icon);
   return (
     <footer className={style.footer}>
         <div className="container">
@@ -18,8 +19,9 @@ export default function Footer() {
                         {icons.map((el) => (<li className={style.icon} key={el.id}>
                           <Link to="#">
                           {el.icon}
-                          {el.name}
+                          
                           </Link>
+                          {el.name}
                           </li>))}
                     </ul>
               </div>

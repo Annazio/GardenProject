@@ -7,23 +7,20 @@
     justify-content: space-between;
 }
 
-
-/* не функционирует объединение   ?????*/
-/* .left_part .right_part{
+ .left_part, .right_part{
     align-items: center;
-} */
+} 
 
 .left_part{
     display: flex;
     gap: 60px;
-    align-items: center;
 }
 
 .right_part{
     display: flex;
-    /* justify-content: space-between; */
     gap: 175px;
-    align-items: center;
+    font-weight: 500;
+    font-size: 16px;  
 }
 
 .right_part img{

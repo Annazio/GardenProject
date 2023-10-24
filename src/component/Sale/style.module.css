@@ -1,15 +1,21 @@
 .sale{
     background-color: #A1E2EB;
     min-height: 600px;
-    margin-top: 80px;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 80px ;
 }
 .sale_wrapper{
     display: flex;
     justify-content: space-between;
 }
 .left_wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
     color: var(--white);
     font-weight: 700; 
+    gap: 60px;
 }
 .title_wrapper{
     margin-top: 130px;

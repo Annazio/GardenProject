@@ -1,7 +1,15 @@
 import React from 'react'
+import style from './style.module.css'
+import CategoriesList from '../../component/CategoriesList'
 
 export default function CategoriesPage() {
   return (
-    <div>CategoriesPage</div>
+    <section className={style.categories_page}>
+        <div className='container'>
+            <h1>Categories</h1>
+            <CategoriesList/>
+        </div>
+    </section>
+    
   )
 }
