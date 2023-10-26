@@ -25,6 +25,7 @@ a{
   margin: 0 auto;
   background-color: var(--white);
   font-family: Montserrat;
+  font-weight: 400;
 }
 
 .container{

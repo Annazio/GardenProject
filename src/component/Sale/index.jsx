@@ -12,7 +12,7 @@ export default function Sale() {
                         <h2 className={style.title}>Sale</h2>
                         <p className={style.title_info}>New Season</p>
                     </div>
-                    <ButtonUI text="Sale" type="sale_btn"/>
+                    <ButtonUI text="Sale" content="sale_btn"/>
                 </div>
 
                 <div className={style.right_wrapper}>

@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import CategoryItem from '../CategoryItem';
 import { fetchCategories } from '../../store/slice/categoriesSlice';
-
-export default function CategoriesList({id, title, image}) {
+import style from "./style.module.css"
+export default function CategoriesList({id}) {
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export default function CategoriesList({id, title, image}) {
 
     
   return (
-    <>
+    <div>
     {
         status === 'ready'
         ?
@@ -32,7 +32,7 @@ export default function CategoriesList({id, title, image}) {
         ? <h2>Loading</h2>
         : ''
     }
-    </>
+    </div>
   )
 }
 

@@ -2,16 +2,15 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    font-weight: 700;
     transition: background-color 0.3s;
-    
 }
 
 
 .ui_btn.header_btn{
     width: 125px;
     height: 50px;
-    font-size: 16px;
-    font-weight: 700;
+    /* font-size: 16px;  */
     background-color: var(--green);
     color: var(--white);
 }
@@ -19,7 +18,6 @@
 .ui_btn.sale_btn{
     background-color: var(--white);
     color: var(--black);
-    font-weight: 700;
     font-size: 25px;
     width: 155px;
     height: 80px;

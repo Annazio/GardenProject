@@ -11,7 +11,7 @@ export default function Nav() {
         <nav>
             {
             links.map(({id, title, link}) =>
-            <NavLink className={className}  key={id} to={link}>{title}</NavLink> )
+            <NavLink className={`${className} ${style.link}`}  key={id} to={link}>{title}</NavLink> )
             }
         </nav>
     </div>

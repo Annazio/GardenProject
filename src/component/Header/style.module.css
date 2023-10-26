@@ -5,6 +5,7 @@
 .wrapper{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
  .left_part, .right_part{
@@ -18,12 +19,22 @@
 
 .right_part{
     display: flex;
-    gap: 175px;
+    gap: 15px;
     font-weight: 500;
     font-size: 16px;  
+}
+
+.bag_link{
+    max-width: 200px;
+    width: 100%;
 }
 
 .right_part img{
     width: 30px;
     height: 30px;
+    margin-left: auto;
+    display: block;
+}
+
+@media (max-width: 768px){
 }

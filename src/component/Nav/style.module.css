@@ -6,7 +6,11 @@ nav{
 }
 
 .active{
-    color: var(--black);
+    color: var(--green);
     font-weight: 500;
-    font-size: 16px;
+    /* font-size: 16px; */
+}
+.link{
+    color: var(--black);
+    flex-shrink: 0;
 }

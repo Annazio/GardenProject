@@ -4,9 +4,18 @@ import Logo from "../../assets/images/Logo.png"
 import shopping_bag from "../../assets/icons/shopping_bag.svg"
 import style from "./style.module.css"
 import ButtonUI from '../../UI/ButtonUI'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Burger from '../Burger'
 
 export default function Header() {
+
+  
+  const navigate = useNavigate();
+
+  const handleClick = () =>{
+  navigate('/categories');
+  }
+
   return (
     <header className={style.header}>
       <div className='container'>
@@ -16,17 +25,20 @@ export default function Header() {
               <Link to="/">
                 <img src={Logo} alt="Logo" />
               </Link>
-              <ButtonUI text="Catalog" type="header_btn" />
+              <ButtonUI text="Catalog" content="header_btn" onClick={handleClick}/>
             </div>
           
             <div className={style.right_part}>
                 <Nav/>
-                <Link to="/shoppingcard">
+                <Link className={style.bag_link} to="/shoppingcard">
                     <img src={shopping_bag} alt="Shopping Bag" />
                 </Link>
             </div>
+            
+           
 
         </div>
+        <Burger/>
       </div>
     </header>
   )

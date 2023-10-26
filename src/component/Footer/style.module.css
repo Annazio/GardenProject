@@ -1,5 +1,5 @@
 .footer{
-    padding: 40px;
+    padding: 40px 0;
 }
 
 .contacts{
@@ -16,7 +16,8 @@
 
 .phone{
     font-weight: 600;
-    font-size: 70px;
+    font-size: clamp(26px, 4.8vw, 70px);
+    /* margin: */
     cursor: pointer;
 }
 
@@ -55,3 +56,5 @@
 	height: 525px;
     border: none;
 }
+
+@media (max-width: 768px){}

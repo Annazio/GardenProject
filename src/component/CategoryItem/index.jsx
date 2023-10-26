@@ -7,7 +7,7 @@ export default function CategoryItem({image, title}) {
     
     <Link to='#'>
       <div className={style.image_wrapper}>
-			   <img src={image} alt={title} />
+			   <img src={"http://localhost:3333" + image} alt={title} />
 		  </div>
 		<h3 className={style.category_title}>{title}</h3>
         
