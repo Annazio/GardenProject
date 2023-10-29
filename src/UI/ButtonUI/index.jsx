@@ -1,9 +1,9 @@
 import style from "./style.module.css";
 
-export default function ButtonUI({ text, type, content, handleClick }) {
+export default function ButtonUI({ text, type, content, onClick }) {
     return <button 
             className={`${style.ui_btn} ${style[content]}`} 
             type={type}
-            onClick={handleClick}
+            onClick={() => onClick()}
             >{text}</button>;
 }

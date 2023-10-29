@@ -24,7 +24,8 @@
 .social_icons{
     display: flex;
     gap: 60px;
-    justify-content: start;
+    /* justify-content: start; */
+    justify-content: flex-start;
 }
 .icon{
     width: 50px;

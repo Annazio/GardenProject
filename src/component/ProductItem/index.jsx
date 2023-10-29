@@ -13,9 +13,9 @@ export default function ProductItem({image, title, price}) {
       <div className={`${style.image_wrapper} ${isHovered ? style.hovered : ''}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
-		<img src={"http://localhost:3333" + image} alt={title} />
+		<img src={"http://localhost:3333" + image} alt={title}  className={style.product_img}/>
         {isHovered && (
-        <ButtonUI text="Add to card"/>
+        <ButtonUI text="Add to cart"/>
       )}
 	  </div>
       <p>{price}</p>

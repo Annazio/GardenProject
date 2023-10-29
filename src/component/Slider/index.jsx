@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../../store/slice/categoriesSlice';
-import {Swiper,SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
 import style from "./style.module.css"
+import { Pagination, Navigation } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export default function CategoriesList({id}) {
     const dispatch = useDispatch()
 
     useEffect(() => {
       dispatch(fetchCategories(id));
-    }, [id])
+    }, [id, dispatch])
 
     const {status, list} = useSelector(({categories}) => categories)
 
@@ -20,13 +25,14 @@ export default function CategoriesList({id}) {
         status === 'ready'
         ?
          
-        <div>
-          <Swiper className={style.slider_wrapper}
+        <div className={style.swiper_container}>
+          <Swiper className="mySwiper"
             slidesPerView={4}
             spaceBetween={20}
             freeMode={true}     
-            navigation
+            navigation={true}
             pagination={{ clickable: true }}
+            modules={[Pagination, Navigation]}
           >
             {
               list.map(category => <SwiperSlide key={category.id}>
