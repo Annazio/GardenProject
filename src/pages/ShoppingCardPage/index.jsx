@@ -1,7 +1,10 @@
 import React from 'react'
+import ShoppingCart from '../../component/ShoppingCart'
 
 export default function ShoppingCardPage() {
   return (
-    <div>ShoppingCardPage</div>
+    <div className='container'>
+      <ShoppingCart/>
+    </div>
   )
 }

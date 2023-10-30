@@ -7,3 +7,4 @@ export default function ButtonUI({ text, type, content, onClick }) {
             onClick={() => onClick()}
             >{text}</button>;
 }
+

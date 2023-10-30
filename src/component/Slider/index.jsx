@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories } from '../../store/slice/categoriesSlice';
 import {Swiper, SwiperSlide} from "swiper/react";
 import style from "./style.module.css"
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+import ButtonUI from '../../UI/ButtonUI'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 export default function CategoriesList({id}) {
     const dispatch = useDispatch()
@@ -18,9 +18,16 @@ export default function CategoriesList({id}) {
 
     const {status, list} = useSelector(({categories}) => categories)
 
-    
+
   return (
     <div className='container'>
+      <section id="slider_section">
+    <div className={style.section_title}>
+      <h3>Catalog</h3>
+      <ButtonUI text="Catalog"/>
+    </div>
+
+    
     {
         status === 'ready'
         ?
@@ -30,9 +37,8 @@ export default function CategoriesList({id}) {
             slidesPerView={4}
             spaceBetween={20}
             freeMode={true}     
-            navigation={true}
             pagination={{ clickable: true }}
-            modules={[Pagination, Navigation]}
+            modules={[Pagination]}
           >
             {
               list.map(category => <SwiperSlide key={category.id}>
@@ -55,7 +61,8 @@ export default function CategoriesList({id}) {
         ? <h2>Loading</h2>
         : ''
     }
+    </section>
     </div>
+    
   )
 }
-

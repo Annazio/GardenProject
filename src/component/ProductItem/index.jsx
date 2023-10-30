@@ -2,8 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './style.module.css'
 import ButtonUI from '../../UI/ButtonUI';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/slice/cartSlice';
 
-export default function ProductItem({image, title, price}) {
+export default function ProductItem({id, image, title, price}) {
+
+  const dispatch = useDispatch();
+  const addProduct = () => dispatch(addToCart(id))
+
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -15,7 +21,7 @@ export default function ProductItem({image, title, price}) {
             onMouseLeave={() => setIsHovered(false)}>
 		<img src={"http://localhost:3333" + image} alt={title}  className={style.product_img}/>
         {isHovered && (
-        <ButtonUI text="Add to cart"/>
+        <ButtonUI text="Add to cart" onClick={addProduct}/>
       )}
 	  </div>
       <p>{price}</p>
@@ -24,6 +30,3 @@ export default function ProductItem({image, title, price}) {
     </Link>
   )
 }
-
-
-

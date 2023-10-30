@@ -5,16 +5,18 @@ nav{
     gap: 1.5rem;
 }
 
-.link{
+
+nav a {
     font-weight: 500;
     color: var(--black);
     flex-shrink: 0;
 }
 
+    
 
-.link .active{
+nav .active{
     /* color: var(--green); */
   
     /* font-size: 16px; */
-   color: green
+   color: var(--green)
 }

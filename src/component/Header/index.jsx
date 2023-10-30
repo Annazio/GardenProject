@@ -6,6 +6,9 @@ import style from "./style.module.css"
 import ButtonUI from '../../UI/ButtonUI'
 import { Link, useNavigate } from 'react-router-dom';
 import Burger from '../Burger'
+import { HashLink } from 'react-router-hash-link'
+// import { ScrollLink } from 'react-scroll'
+
 
 export default function Header() {
 
@@ -26,7 +29,11 @@ export default function Header() {
               <Link to="/">
                 <img src={Logo} alt="Logo" />
               </Link>
-              <ButtonUI text="Catalog" content="header_btn" onClick={handleClick}/>
+             <HashLink to="#slider_section" smooth={true} duration={500}>
+              {/* <ScrollLink to="slider_section" smooth={true} duration={500}> */}
+              <ButtonUI text="Catalog" content="header_btn" onClick={handleClick} />
+              {/* </ScrollLink> */}
+              </HashLink>
             </div>
           
             <div className={style.right_part}>
@@ -44,4 +51,5 @@ export default function Header() {
     </header>
   )
 }
+
 

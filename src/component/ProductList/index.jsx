@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../ProductItem';
 import { fetchProducts } from '../../store/slice/productSlice';
+import style from './style.module.css'
 
 export default function ProductList({id}) {
 
@@ -15,14 +16,14 @@ const dispatch = useDispatch()
 
 
   return (
-    <>
+    <div >
         {
         status === 'ready'
         ?
       
-        <div>
+        <div className={style.product_list_container}>
             {
-              list.map(product => <ProductItem key={product.id} title={product.title} image={product.image} price={product.price}/>)
+              list.map(product => <ProductItem key={product.id} {...product}/>)
             }
         </div>
 
@@ -33,6 +34,6 @@ const dispatch = useDispatch()
         ? <h2>Loading</h2>
         : ''
     }
-    </>
+    </div>
   )
 }

@@ -8,7 +8,9 @@
     width: 100%;
     height: 100%;
   }
-  
+/* .swiper-wrapper{
+  margin-bottom: 3rem;
+} */
   .swiper-slide {
     background: #fff;
   }
@@ -34,4 +36,10 @@
   .category_image{
     width: 100%;
     object-fit: contain;
+    height: 220px;
+  }
+
+  .section_title{
+    display: flex;
+    gap: 100px;
   }
