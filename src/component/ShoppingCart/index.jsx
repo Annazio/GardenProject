@@ -1,17 +1,21 @@
 import React from 'react'
 import ShoppingCartItem from '../ShoppingCartItem'
 import { useCart } from '../../utils/useCart'
+import ByCondition from '../../UI/ByCondition'
+import EmptyShoppingCart from '../EmptyShoppingCart'
 
 export default function ShoppingCart() {
-    const card = useCart()
+    const cart = useCart()
 
-    console.log(card);
 
   return (
     <div>
         {
-          card.map(item => <ShoppingCartItem key={item.id} {...item} />)
+          cart.map(item => <ShoppingCartItem key={item.id} {...item} />)
         }
+        <ByCondition condition={cart.length === 0}>
+            <EmptyShoppingCart/>
+        </ByCondition>
     </div>
   )
 }

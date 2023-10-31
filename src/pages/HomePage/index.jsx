@@ -7,8 +7,9 @@ export default function HomePage() {
   return (
     <div>
         <Sale/>
-        <Discount/>
         <Slider/>
+        <Discount/>
+        
     </div>
   )
 }
