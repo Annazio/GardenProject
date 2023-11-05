@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 import ButtonUI from '../../UI/ButtonUI'
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/slice/cartSlice';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 export default function SingleItemPage() {
   const {id} = useParams()
@@ -10,6 +10,8 @@ export default function SingleItemPage() {
 
   const dispatch = useDispatch()
     const addProduct = () => dispatch(addToCart(+id))
+
+
 
     if (products.length === 0){
       return ''

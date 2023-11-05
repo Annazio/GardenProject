@@ -5,7 +5,6 @@ import ButtonUI from '../../UI/ButtonUI';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/slice/cartSlice';
 import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
-import ByCondition from '../../UI/ByCondition';
 
 
 export default function ProductItem({id, image, title, price, discont_price}) {
@@ -26,9 +25,6 @@ export default function ProductItem({id, image, title, price, discont_price}) {
      
 	  </div>
       <p>{price}</p>
-      {/* <ByCondition condition={{discont_price} > 0}>
-          <p>{discont_price}</p>
-      </ByCondition> */}
       <p>{discont_price}</p>
       <p>{discount}</p>
 	  <h3 className={style.product_title}>{title}</h3>
