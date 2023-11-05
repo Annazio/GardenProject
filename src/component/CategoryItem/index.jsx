@@ -2,10 +2,10 @@ import React from 'react'
 import style from './style.module.css'
 import { Link } from 'react-router-dom'
 
-export default function CategoryItem({image, title}) {
+export default function CategoryItem({id, image, title}) {
   return (
     
-    <Link to='#'>
+    <Link to={`/categories/${id}`}>
       <div className={style.image_wrapper}>
 			   <img src={"http://localhost:3333" + image} alt={title} />
 		  </div>

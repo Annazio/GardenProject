@@ -7,6 +7,8 @@ import ShoppingCardPage from './pages/ShoppingCardPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Wrap from './component/Wrap';
 import ProductsListPage from './pages/ProductListPage';
+import SingleCategoryPage from './pages/SingleCategoryPage';
+import SalePage from './pages/SalePage'
 
 function App() {
   return (
@@ -15,8 +17,9 @@ function App() {
         <Route path="/" element={<Wrap/>}>
           <Route index element={<HomePage />}/>
           <Route path ="categories" element={<CategoriesPage />}/>
-          <Route path ="products" element={<ProductsListPage />}/>
-          <Route path ="categories/:id" element={<ProductsListPage />}/>
+          <Route path ="products/all" element={<ProductsListPage />}/>
+          <Route path ="products/sale" element={<SalePage />}/>
+          <Route path ="categories/:id" element={<SingleCategoryPage />}/>
           <Route path ="products/:id" element={<SingleItemPage />}/>
           <Route path ="shoppingcard" element={<ShoppingCardPage />}/>
           <Route path ="*" element={<NotFoundPage />}/>

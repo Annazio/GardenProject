@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import CategoryItem from '../CategoryItem';
 import { fetchCategories } from '../../store/slice/categoriesSlice';
 import style from "./style.module.css"
-export default function CategoriesList({id}) {
+
+export default function CategoriesList() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-      dispatch(fetchCategories(id));
-    }, [id])
+      dispatch(fetchCategories());
+    }, [dispatch])
 
     const {status, list} = useSelector(({categories}) => categories)
 
@@ -21,7 +22,7 @@ export default function CategoriesList({id}) {
       
         <div>
             {
-              list.map(category => <CategoryItem key={category.id} title={category.title} image={category.image}/>)
+              list.map(category => <CategoryItem key={category.id} {...category}/>)
             }
         </div>
 

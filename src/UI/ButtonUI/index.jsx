@@ -4,7 +4,8 @@ export default function ButtonUI({ text, type, content, onClick }) {
     return <button 
             className={`${style.ui_btn} ${style[content]}`} 
             type={type}
-            onClick={() => onClick()}
+            onClick={onClick}
+            // onClick={() => onClick()}
             >{text}</button>;
 }
 

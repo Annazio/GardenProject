@@ -2,7 +2,16 @@ import React from 'react'
 import style from "./style.module.css"
 import flowers from "../../assets/images/flowers.png"
 import ButtonUI from '../../UI/ButtonUI'
+import { useNavigate } from 'react-router-dom';
+
 export default function Sale() {
+    const navigate = useNavigate();
+
+
+    const handleClick = () =>{
+    navigate('/');
+    }
+
   return (
     <section className={style.sale}>
         <div className='container'>
@@ -12,7 +21,9 @@ export default function Sale() {
                         <h2 className={style.title}>Sale</h2>
                         <p className={style.title_info}>New Season</p>
                     </div>
-                    <ButtonUI text="Sale" content="sale_btn"/>
+                    <a href='#sale_slider_section'>
+                    <ButtonUI text="Sale" content="sale_btn" onClick={handleClick}/>
+                    </a>
                 </div>
 
                 <div className={style.right_wrapper}>

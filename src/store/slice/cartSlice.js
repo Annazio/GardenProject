@@ -14,7 +14,6 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, {payload}){
-            console.log(payload);
             const target = state.list.find(({id}) => id === payload);
             if (target){
                 target.count++

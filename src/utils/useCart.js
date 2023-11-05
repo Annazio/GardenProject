@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 export function useCart(){
     const {cart, products} = useSelector(state => state);
     const {status, list} = products;
+    
 
     if (status !== 'ready') {
         return []

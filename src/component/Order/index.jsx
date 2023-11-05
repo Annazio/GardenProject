@@ -2,6 +2,7 @@ import React from 'react'
 import style from './style.module.css'
 import { useDispatch } from 'react-redux';
 import { useCart } from '../../utils/useCart';
+import PhoneForm from '../PhoneForm';
 
 export default function Order() {
     const dispatch = useDispatch()
@@ -15,6 +16,13 @@ export default function Order() {
 				<p>Total</p>
 				<p>{totalSum}</p>
 			</div>
+      <PhoneForm
+        contentInput="order"
+        placeholderInput="Phone number"
+        textButton="Order"
+        contentButton="order"
+        type="order"
+      />
 	</div>
   )
 }

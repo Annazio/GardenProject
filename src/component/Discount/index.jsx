@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./style.module.css"
 import dwarf from "../../assets/images/Dwarf.png"
+import PhoneForm from '../PhoneForm'
 
 
 export default function Discount
@@ -21,6 +22,12 @@ export default function Discount
 						</h2>
                 </div>
             </div>
+            <PhoneForm
+                typeInput="sale"
+                placeholderInput="+49"
+                textButton="Get a discount"
+                typeButton="sale"
+            />
         </section>
 
     </div>
