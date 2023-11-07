@@ -29,7 +29,7 @@ export default function SingleItemPage() {
           <img src={"http://localhost:3333" + image} alt={title} />
         </div>
         <div className={style.detail_wrapper}>
-          <ProductPrice/>
+          
           {/* <p>{price}</p>
           <p>{discont_price}</p>
           <p>{discount}</p> */}

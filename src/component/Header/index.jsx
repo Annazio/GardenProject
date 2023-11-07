@@ -10,7 +10,6 @@ import Burger from '../Burger'
 
 export default function Header() {
 
-  
   const navigate = useNavigate();
 
 
@@ -42,7 +41,7 @@ export default function Header() {
            
 
         </div>
-        <Burger/>
+        <Burger />
       </div>
     </header>
   )
