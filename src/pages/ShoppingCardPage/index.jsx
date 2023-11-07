@@ -5,6 +5,7 @@ import Order from '../../component/Order'
 export default function ShoppingCardPage() {
   return (
     <div className='container'>
+     
       <ShoppingCart/>
       <Order/>
     </div>

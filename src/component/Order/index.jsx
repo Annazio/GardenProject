@@ -17,11 +17,12 @@ export default function Order() {
 				<p>{totalSum}</p>
 			</div>
       <PhoneForm
-        contentInput="order"
         placeholderInput="Phone number"
+        typeInput="tel"
+        nameInput="order"
+        contentInput="order"
         textButton="Order"
         contentButton="order"
-        type="order"
       />
 	</div>
   )

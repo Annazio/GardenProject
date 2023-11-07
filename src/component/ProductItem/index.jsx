@@ -14,21 +14,26 @@ export default function ProductItem({id, image, title, price, discont_price}) {
   
   const discount = useCalculateDiscount(price, discont_price)
  
+  function handleID(){
+     localStorage.setItem("Product_ID", JSON.stringify(id))
+  }
 
 
   return (
+    <div>
     <Link to={`/products/${id}`}>
       <div>
-		<img src={"http://localhost:3333" + image} alt={title}  className={style.product_img}/>
+		    <img src={"http://localhost:3333" + image} alt={title}  className={style.product_img} onClick={() => handleID}/>
        
+	    </div>
+    </Link>
         <ButtonUI text="Add to cart" onClick={addProduct}/>
      
-	  </div>
       <p>{price}</p>
       <p>{discont_price}</p>
       <p>{discount}</p>
 	  <h3 className={style.product_title}>{title}</h3>
         
-    </Link>
+    </div>
   )
 }
