@@ -1,15 +1,51 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-export async function fetchDiscountOrder(data){
-    const resp = await fetch(`http://localhost:3333/${data.nameInput}/send`,{
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-        },
-    })  
-    console.log(resp.nameInputValue);
+
+const initialState ={
+    list: [],
+    userPhoneNumber: ""
 }
 
 
+export const fetchDiscount = createAsyncThunk(
+    'discount/fetchDiscount',
+        async (data, {rejectWithValue}) => { 
+        try{const resp = await fetch(`http://localhost:3333/sale/send`,{
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+        }) 
+      } catch(error){
+        console.error(error)
+        return rejectWithValue({message: "error fetch discount"})
+    }       
+})
 
-	
+
+export const orderDiscountSlice = createSlice({
+    name: 'discount',
+    initialState,
+    reducers: {
+        getPhoneNumber(state, {payload}){
+            state.userPhoneNumber = payload
+        }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchDiscount.pending, (state) => {
+                state.status ='loading'
+            })
+            .addCase(fetchDiscount.fulfilled, (state, {payload}) => {
+                state.status ='ready';
+                state.list = payload;
+            })
+            .addCase(fetchDiscount.rejected, (state) => {
+                state.status ='error'
+            })
+    }
+})
+
+export default orderDiscountSlice.reducer
+export const {getPhoneNumber}=orderDiscountSlice.actions

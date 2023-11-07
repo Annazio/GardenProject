@@ -1,32 +1,46 @@
-import { useParams, useNavigate} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ButtonUI from '../../UI/ButtonUI'
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/slice/cartSlice';
-import { useEffect } from 'react';
+import style from './style.module.css'
+import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
+import { ProductPrice } from '../../component/ProductPrice';
 
 export default function SingleItemPage() {
-  const {id} = useParams()
-  const products = useSelector(({products}) => products.list);
+  const { id } = useParams()
+  const products = useSelector(({ products }) => products.list);
 
   const dispatch = useDispatch()
-    const addProduct = () => dispatch(addToCart(+id))
+  const addProduct = () => dispatch(addToCart(+id))
 
 
+  if (products.length === 0) {
+    return ''
+  }
+  const { image, title, description, price } = products.find(item => item.id === +id);
 
-    if (products.length === 0){
-      return ''
-    }
-    const {image, title, description, price} = products.find(item => item.id === +id);
-
+  // const discount = useCalculateDiscount(price, discont_price)
 
   return (
     <div className='container'>
-        <h3>{title}</h3>
-        <img src={"http://localhost:3333" + image} alt={title} />
-        <p>{price}</p>
-        <ButtonUI text="To cart" onClick={addProduct}/>
-        <p>Description {description}</p>
+      <div single_item_wrapper>
+        <h1 className={style.title}>{title}</h1>
+        <div className={style.image_wrapper}>
+          <img src={"http://localhost:3333" + image} alt={title} />
+        </div>
+        <div className={style.detail_wrapper}>
+          <ProductPrice/>
+          {/* <p>{price}</p>
+          <p>{discont_price}</p>
+          <p>{discount}</p> */}
+          <ButtonUI text="To cart" onClick={addProduct} />
+          <div className={style.description}>
+            <p>Description </p>
+            <p>{description}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  ) 
+  )
 }
- 
+

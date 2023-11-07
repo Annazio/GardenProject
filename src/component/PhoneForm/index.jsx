@@ -2,7 +2,8 @@ import React from 'react'
 import InputUI from '../../UI/InputUI'
 import ButtonUI from '../../UI/ButtonUI'
 import { useForm } from 'react-hook-form'
-import { fetchDiscountOrder } from '../../store/slice/orderDiscountSlice'
+import { fetchDiscount, fetchDiscountOrder } from '../../store/slice/orderDiscountSlice'
+import { useDispatch } from 'react-redux'
 
 export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput }) {
 
@@ -13,45 +14,21 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
     reset
   } = useForm({ mode: 'onChange' })
 
-console.log(errors.phone);
-  const onSubmit = () => {
-   
-  // const {nameInput} = event.target;
+  const dispatch = useDispatch()
 
-  // const data = {
-  //   nameInput: +nameInput.value
-  // }
-
-  // fetchDiscountOrder(data);
-  // console.log(data);
-
-
-    // const nameInputValue = data.nameInput;
-    
-    // const requestData = {
-    //   nameInput: nameInputValue
-    // };
-
-    
-    // fetchDiscountOrder(requestData);
-    // console.log(requestData);
-
-
-
-
-    // fetchDiscountOrder(nameInput);
-    // console.log(nameInput);
+  const onSubmit = (data) => {
+    dispatch(fetchDiscount(data.phone))
     reset()
   }
 
-  // const phoneInput = register('phone', {
-  //   required: 'Phone number required',
-  //   pattern: {
-  //     value: /^\+?\d{5,13}$/,
-  //     message: 'Your phone number should contain 5 to 13 characters'
+  const phoneInput = register('phone', {
+    required: 'Phone number required',
+    pattern: {
+      value: /^\+?\d{5,13}$/,
+      message: 'Your phone number should contain 5 to 13 characters'
 
-  //   }
-  // })
+    }
+  })
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -60,17 +37,7 @@ console.log(errors.phone);
           type={typeInput}
           name={nameInput}
           content = {contentInput}
-          {
-            ...register('phone', {
-              required: true,
-              maxLength: 3
-              // pattern: {
-              //   value: /^\+?\d{5,13}$/,
-              //   message: 'Your phone number should contain 5 to 13 characters'
-          
-              // }
-            })
-          }
+          validation={phoneInput}
         />
         {errors.phone && <p style={{ color: 'red' }}>{errors.phone.message}</p>}
     

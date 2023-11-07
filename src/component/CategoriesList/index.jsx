@@ -15,12 +15,13 @@ export default function CategoriesList() {
 
     
   return (
-    <div>
+    <div className={style.categories_wrapper}>
+      <h1>Categories</h1>
     {
         status === 'ready'
         ?
       
-        <div>
+        <div className={style.categories_list_container}>
             {
               list.map(category => <CategoryItem key={category.id} {...category}/>)
             }

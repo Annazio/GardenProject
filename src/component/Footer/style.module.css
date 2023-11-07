@@ -17,14 +17,12 @@
 .phone{
     font-weight: 600;
     font-size: clamp(26px, 4.8vw, 70px);
-    /* margin: */
     cursor: pointer;
 }
 
 .social_icons{
     display: flex;
     gap: 60px;
-    /* justify-content: start; */
     justify-content: flex-start;
 }
 .icon{

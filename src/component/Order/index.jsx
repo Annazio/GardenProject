@@ -5,7 +5,7 @@ import { useCart } from '../../utils/useCart';
 import PhoneForm from '../PhoneForm';
 
 export default function Order() {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     const cart = useCart();
     const totalSum = cart.reduce((acc, {count, price}) => acc + count * price, 0) 
 

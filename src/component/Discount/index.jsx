@@ -23,10 +23,12 @@ export default function Discount
                 </div>
             </div>
             <PhoneForm
-                typeInput="sale"
                 placeholderInput="+49"
+                typeInput="tel"
+                nameInput="sale"
+                contentInput="sale"
                 textButton="Get a discount"
-                typeButton="sale"
+                contentButton="sale"
             />
         </section>
 
