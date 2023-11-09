@@ -15,4 +15,4 @@ export function useCart(){
         return {...item, ...product}
     })
     return result
-}
+} 

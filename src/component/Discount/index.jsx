@@ -2,6 +2,7 @@ import React from 'react'
 import style from "./style.module.css"
 import dwarf from "../../assets/images/Dwarf.png"
 import PhoneForm from '../PhoneForm'
+import { fetchDiscount } from '../../store/slice/orderDiscountSlice'
 
 
 export default function Discount
@@ -29,6 +30,7 @@ export default function Discount
                 contentInput="sale"
                 textButton="Get a discount"
                 contentButton="sale"
+                fetch={fetchDiscount}
             />
         </section>
 

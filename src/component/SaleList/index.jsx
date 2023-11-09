@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../store/slice/productSlice';
 import ProductItem from '../ProductItem';
+import ProductsFilter from '../ProductsFilter';
 
 export default function SaleList({id}) {
 
@@ -9,7 +10,7 @@ export default function SaleList({id}) {
 
     useEffect(() => {
     dispatch(fetchProducts(id));
-    }, [id])
+    }, [id, dispatch])
 
     const {status, list} = useSelector(({products}) => products)
 
@@ -18,6 +19,8 @@ export default function SaleList({id}) {
 
     
   return (
+    <div >
+      <ProductsFilter/>
     <div>
         {
             status === 'ready'
@@ -25,7 +28,9 @@ export default function SaleList({id}) {
         
             <div>
                 {
-                saleArr.map(product => <ProductItem key={product.id} {...product}/>)
+                saleArr
+                .filter(({show}) => Object.values(show).every(elem => elem))
+                .map(product => <ProductItem key={product.id} {...product}/>)
                 }
             </div>
 
@@ -36,6 +41,7 @@ export default function SaleList({id}) {
             ? <h2>Loading</h2>
             : ''
         }
+    </div>
     </div>
   )
 }

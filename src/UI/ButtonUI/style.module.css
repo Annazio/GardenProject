@@ -4,6 +4,7 @@
     cursor: pointer;
     font-weight: 700;
     transition: background-color 0.3s;
+    font-family: Montserrat;
 }
 
 
@@ -21,6 +22,9 @@
     font-size: 25px;
     width: 155px;
     height: 80px;
+    font-family: Montserrat;
+
+
 }
 
 

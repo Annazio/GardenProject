@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductItem from '../../component/ProductItem'
 import { fetchCategoryById } from '../../store/slice/categoriesSlice'
+import ProductsFilter from '../../component/ProductsFilter'
 
 export default function SingleCategoryPage() {
 
@@ -11,16 +12,24 @@ export default function SingleCategoryPage() {
 
     useEffect(() => { 
       dispatch(fetchCategoryById(id))
-    }, [dispatch])
+    }, [id, dispatch])
     
-    const {list, title} = useSelector(({categories}) => categories)
+    const { list, title} = useSelector(({categories}) => categories)
     
   return (
     <div>
         <h1>{title}</h1>
+        <ProductsFilter/>
+        
+        <div>
         {
-            list.map(product => <ProductItem key={product.id} {...product}/>)
+            list
+            // .filter(({show}) => Object.values(show).every(elem => elem))
+            .map(product => <ProductItem key={product.id} {...product}/>)
         }
+        </div>
+        
+    
     </div>
   )
 }

@@ -45,7 +45,8 @@ img{
 }
 
 h1{
-  /* font-family: Montserrat; */
+  font-family: Montserrat; 
   font-size: 40px;
   font-weight: 700;
 }
+

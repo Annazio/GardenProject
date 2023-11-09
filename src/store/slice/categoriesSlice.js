@@ -28,6 +28,17 @@ export const fetchCategoryById = createAsyncThunk(
 export const categorySlice = createSlice({
     name: 'category',
     initialState,
+    reducers: {
+        priceFilter(state, {payload}){
+            state.list = state.list.map(elem => ({
+                ...elem,
+                show: {
+                    ...elem.show,
+                    price: elem.price >= payload.min && elem.price <= payload.max
+                }
+            }))
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchCategories.pending, (state) => {
@@ -43,11 +54,19 @@ export const categorySlice = createSlice({
             .addCase(fetchCategoryById.pending, (state) => {
                 state.status ='loading'
             })
+            // .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
+            //     state.status ='ready';
+            //     const show = {price: true};
+            //     state.list = payload.data.map(elem => ({...elem, show}));
+            //     state.title = payload.category.title
+            // })
+
             .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
                 state.status ='ready';
                 state.list = payload.data;
                 state.title = payload.category.title
             })
+
             .addCase(fetchCategoryById.rejected, (state) => {
                 state.status ='error'
             })
@@ -56,4 +75,4 @@ export const categorySlice = createSlice({
 
 
 export default categorySlice.reducer;
-
+export const {priceFilter} = categorySlice.actions;

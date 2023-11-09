@@ -6,7 +6,10 @@ import EmptyShoppingCart from '../EmptyShoppingCart'
 
 export default function ShoppingCart() {
     const cart = useCart()
+console.log(cart);
 
+    
+    // const productsList = productId ? productId : localStorage.getItem("ProductId")
 
   return (
     <div>

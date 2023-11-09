@@ -2,10 +2,9 @@ import React from 'react'
 import InputUI from '../../UI/InputUI'
 import ButtonUI from '../../UI/ButtonUI'
 import { useForm } from 'react-hook-form'
-import { fetchDiscount, fetchDiscountOrder } from '../../store/slice/orderDiscountSlice'
 import { useDispatch } from 'react-redux'
 
-export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput }) {
+export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput, fetch }) {
 
   const {
     register,
@@ -17,7 +16,7 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
   const dispatch = useDispatch()
 
   const onSubmit = (data) => {
-    dispatch(fetchDiscount(data.phone))
+    dispatch(fetch(data.phone))
     reset()
   }
 

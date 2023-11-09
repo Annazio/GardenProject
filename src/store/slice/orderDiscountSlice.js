@@ -23,6 +23,21 @@ export const fetchDiscount = createAsyncThunk(
     }       
 })
 
+export const fetchOrder = createAsyncThunk(
+    'discount/fetchOrder',
+        async (data, {rejectWithValue}) => { 
+        try{const resp = await fetch(`http://localhost:3333/order/send`,{
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            },
+        }) 
+      } catch(error){
+        console.error(error)
+        return rejectWithValue({message: "error fetch order"})
+    }       
+})
 
 export const orderDiscountSlice = createSlice({
     name: 'discount',
@@ -42,6 +57,17 @@ export const orderDiscountSlice = createSlice({
                 state.list = payload;
             })
             .addCase(fetchDiscount.rejected, (state) => {
+                state.status ='error'
+            })
+            builder
+            .addCase(fetchOrder.pending, (state) => {
+                state.status ='loading'
+            })
+            .addCase(fetchOrder.fulfilled, (state, {payload}) => {
+                state.status ='ready';
+                state.list = payload;
+            })
+            .addCase(fetchOrder.rejected, (state) => {
                 state.status ='error'
             })
     }

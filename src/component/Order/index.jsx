@@ -3,6 +3,7 @@ import style from './style.module.css'
 import { useDispatch } from 'react-redux';
 import { useCart } from '../../utils/useCart';
 import PhoneForm from '../PhoneForm';
+import { fetchOrder } from '../../store/slice/orderDiscountSlice';
 
 export default function Order() {
     // const dispatch = useDispatch()
@@ -23,6 +24,7 @@ export default function Order() {
         contentInput="order"
         textButton="Order"
         contentButton="order"
+        fetch={fetchOrder}
       />
 	</div>
   )
