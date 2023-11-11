@@ -13,8 +13,8 @@ export default function Header() {
   const navigate = useNavigate();
 
 
-  const handleClick = () =>{
-  navigate('/');
+  const handleClick = () => {
+    navigate('/');
   }
 
   return (
@@ -22,23 +22,23 @@ export default function Header() {
       <div className='container'>
         <div className={style.wrapper}>
 
-            <div className={style.left_part}>
+          <div className={style.left_part}>
               <Link to="/">
                 <img src={Logo} alt="Logo" />
               </Link>
-               <a href='#slider_section'>
-               <ButtonUI text="Catalog" content="header_btn" onClick={handleClick} />
-               </a>
-            </div>
-          
-            <div className={style.right_part}>
-                <Nav/>
-                <Link className={style.bag_link} to="/shoppingcard">
-                    <img src={shopping_bag} alt="Shopping Bag" />
-                </Link>
-            </div>
-            
-           
+            <a href='#slider_section'>
+              <ButtonUI text="Catalog" content="header_btn" onClick={handleClick} />
+            </a>
+          </div>
+
+          <div className={style.right_part}>
+            <Nav />
+            <Link className={style.bag_link} to="/shoppingcard">
+              <img src={shopping_bag} alt="Shopping Bag" />
+            </Link>
+          </div>
+
+
 
         </div>
         <Burger />

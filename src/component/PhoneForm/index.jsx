@@ -3,8 +3,10 @@ import InputUI from '../../UI/InputUI'
 import ButtonUI from '../../UI/ButtonUI'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
+import { fetchDiscount, fetchOrder } from '../../store/slice/orderDiscountSlice'
+import style from "./style.module.css"
 
-export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput, fetch }) {
+export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput }) {
 
   const {
     register,
@@ -16,7 +18,7 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
   const dispatch = useDispatch()
 
   const onSubmit = (data) => {
-    dispatch(fetch(data.phone))
+    nameInput === 'order'? dispatch(fetchOrder(data.phone)) : dispatch(fetchDiscount(data.phone))
     reset()
   }
 
@@ -30,7 +32,7 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
   })
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className={style.phone_form} onSubmit={handleSubmit(onSubmit)}>
         <InputUI
           placeholder={placeholderInput}
           type={typeInput}
@@ -47,4 +49,3 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
 }
 
 
-// {errors.phone && <p className={style.error} style={{ color: 'red' }}>{errors.phone.message}</p>}

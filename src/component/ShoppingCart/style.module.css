@@ -1,0 +1,25 @@
+.cart_wrapper{
+    padding: 80px 0 140px;
+}
+.cart_header{
+    max-width: 825px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid  #A7A7A7;
+}
+.back_btn{
+    display: flex;
+    margin: 20px 0 35px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+    font-size: 20px;
+
+}
+.cart_details_container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}

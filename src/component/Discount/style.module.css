@@ -3,20 +3,31 @@
     min-height: 470px;
     max-width: 1440px;
     margin: auto;
+    margin-top: 90px; 
+    margin-bottom:  50px;
+    padding: 30px 0;
 }
 .discount_wrapper{
-    display: flex;
+     display: flex; 
+     /* gap: 200px; */
+}
+.image_wrapper{
+    max-width: 442px;
 }
 
-.discount_text{
+.get_discount{
+    /* margin-top: 45px;
+    margin-bottom: 45px; */
+}
+.discount_title{
     color: var(--white);
     font-weight: 700;
     font-size: 90px;
     margin-bottom: 50px;
-    
 }
 
-.discount_text span{
+.discount_title span{
+    display: block;
     font-size: 50px;
 }
 

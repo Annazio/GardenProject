@@ -8,6 +8,9 @@
     --black: #000;
     --white: #fff;
     --green:  #339933;
+    --grey: #8B8B8B;
+    --pink: #FF32A1;
+    
     
     --transition: .3s ease-in;
   
@@ -50,3 +53,7 @@ h1{
   font-weight: 700;
 }
 
+p{
+  font-family: Montserrat; 
+  color: var(--black);
+}

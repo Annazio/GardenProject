@@ -7,8 +7,6 @@ const write = (state) => localStorage.setItem('cart', JSON.stringify(state.list)
 const initialState = {list: read() ?? []}
  
 
-
-
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
@@ -45,3 +43,4 @@ export const cartSlice = createSlice({
 
 export const {addToCart, incrAmount, decrAmount, removeItem} = cartSlice.actions;
 export default cartSlice.reducer
+

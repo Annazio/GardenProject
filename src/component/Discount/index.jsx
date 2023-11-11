@@ -2,38 +2,35 @@ import React from 'react'
 import style from "./style.module.css"
 import dwarf from "../../assets/images/Dwarf.png"
 import PhoneForm from '../PhoneForm'
-import { fetchDiscount } from '../../store/slice/orderDiscountSlice'
 
 
 export default function Discount
-() {
+  () {
   return (
-    <div>
-        <section className={style.discount}>
-            <div className='container'>
-                <div className={style.discount_wrapper}>
-                   <div className={style.image}>
-                        <img src={dwarf} alt="Dwarf" />
-                   </div>
-                </div>
-                <div className={style.get_discount}>
-                        <h2 className={style.discount_text}>
-							5% off
-							<span>on the first order</span>
-						</h2>
-                </div>
-            </div>
-            <PhoneForm
-                placeholderInput="+49"
-                typeInput="tel"
-                nameInput="sale"
-                contentInput="sale"
-                textButton="Get a discount"
-                contentButton="sale"
-                fetch={fetchDiscount}
-            />
-        </section>
+    <div className={style.discount}>
+      <div className='container'>
+        <div className={style.discount_wrapper}>
+          <div className={style.image_wrapper}>
+            <img src={dwarf} alt="Dwarf" />
+          </div>
 
+
+          <div className={style.get_discount}>
+            <h4 className={style.discount_title}>
+              5% off <span>on the first order</span>
+            </h4>
+
+            <PhoneForm
+              placeholderInput="+49"
+              typeInput="tel"
+              nameInput="sale"
+              contentInput="discount_input"
+              textButton="Get a discount"
+              contentButton="get_discount"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
