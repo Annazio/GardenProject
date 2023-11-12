@@ -5,11 +5,11 @@ import PhoneForm from '../PhoneForm';
 import { useSelector } from 'react-redux';
 
 export default function Order() {
-  // const cart = useCart();
-  // const totalSum = cart.reduce((acc, { count, price }) => acc + count * price, 0)
-  const {list} = useSelector((state) => state.cartSlice)
+  const list = useCart();
+   const totalSum = list?.reduce((acc, { count, price }) => acc + count * price, 0)
+  // const {list} = useSelector((state) => state.cartSlice)
 
-  const totalSum = list.reduce((acc, { count, price }) => acc + count * price, 0)
+  // const totalSum = list.reduce((acc, { count, price }) => acc + count * price, 0)
 
   return (
     <div className={style.order_wrapper}>

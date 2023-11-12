@@ -11,12 +11,15 @@ import { useSelector } from 'react-redux'
 
 
 export default function ShoppingCart() {
-  //  const cart = useCart()
+   const list = useCart()
+   console.log("🚀 ~ file: index.jsx:15 ~ ShoppingCart ~ list:", list)
 
   // useEffect(() => {() => cart()}, [cart])
+  // const {cart, products} = useSelector(state => state);
+  // console.log("🚀 ~ file: index.jsx:18 ~ ShoppingCart ~ cart:", cart)
 
-  const {list} = useSelector((state) => state.cartSlice)
-  console.log(list);
+  // const {list} = useSelector((state) => state.cart)
+  // console.log(cart);
 
   return (
 
@@ -33,10 +36,10 @@ export default function ShoppingCart() {
       <div className={style.cart_details_container}>
         <div>
           {
-            // list.map(item => <ShoppingCartItem key={item.id} {...item} />)
+            list?.map(item => <ShoppingCartItem key={item.id} {...item} />)
             // cart.map(item => <ShoppingCartItem key={item.id} {...item} />)
           }
-          <ByCondition condition={list.length === 0}>
+          <ByCondition condition={list?.length === 0}>
           {/* <ByCondition condition={cart.length === 0}> */}
 
             <EmptyShoppingCart />
