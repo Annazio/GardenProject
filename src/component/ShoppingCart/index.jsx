@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ShoppingCartItem from '../ShoppingCartItem'
 import { useCart } from '../../utils/useCart'
 import ByCondition from '../../UI/ByCondition'
@@ -7,9 +7,16 @@ import { Link } from 'react-router-dom'
 import { IoIosArrowForward } from 'react-icons/io';
 import style from "./style.module.css"
 import Order from '../Order'
+import { useSelector } from 'react-redux'
+
 
 export default function ShoppingCart() {
-  const cart = useCart()
+  //  const cart = useCart()
+
+  // useEffect(() => {() => cart()}, [cart])
+
+  const {list} = useSelector((state) => state.cartSlice)
+  console.log(list);
 
   return (
 
@@ -26,9 +33,12 @@ export default function ShoppingCart() {
       <div className={style.cart_details_container}>
         <div>
           {
-            cart.map(item => <ShoppingCartItem key={item.id} {...item} />)
+            // list.map(item => <ShoppingCartItem key={item.id} {...item} />)
+            // cart.map(item => <ShoppingCartItem key={item.id} {...item} />)
           }
-          <ByCondition condition={cart.length === 0}>
+          <ByCondition condition={list.length === 0}>
+          {/* <ByCondition condition={cart.length === 0}> */}
+
             <EmptyShoppingCart />
           </ByCondition>
         </div>

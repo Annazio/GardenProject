@@ -3,7 +3,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 const initialState ={
     list: [],
-    title: ""
+    title: "",
+    productsList: []
 }
 
 
@@ -30,7 +31,7 @@ export const categorySlice = createSlice({
     initialState,
     reducers: {
         priceFilter(state, {payload}){
-            state.list = state.list.map(elem => ({
+            state.productsList = state.productsList.map(elem => ({
                 ...elem,
                 show: {
                     ...elem.show,
@@ -54,19 +55,12 @@ export const categorySlice = createSlice({
             .addCase(fetchCategoryById.pending, (state) => {
                 state.status ='loading'
             })
-            // .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
-            //     state.status ='ready';
-            //     const show = {price: true};
-            //     state.list = payload.data.map(elem => ({...elem, show}));
-            //     state.title = payload.category.title
-            // })
-
             .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
                 state.status ='ready';
-                state.list = payload.data;
-                state.title = payload.category.title
+                const show = {price: true};
+                state.productsList = payload.data.map((elem) => ({...elem, show}));
+                state.title = payload.category.title;
             })
-
             .addCase(fetchCategoryById.rejected, (state) => {
                 state.status ='error'
             })

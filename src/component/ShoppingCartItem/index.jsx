@@ -2,7 +2,6 @@ import React from 'react'
 import style from "./style.module.css"
 import { useDispatch } from 'react-redux'
 import {  decrAmount, incrAmount, removeItem } from '../../store/slice/cartSlice';
-// import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
@@ -14,7 +13,6 @@ export default function ShoppingCartItem({id, image, title, count, price, discon
   const incr = () => dispatch(incrAmount(id))
   const remove = () => dispatch(removeItem(id))
 
-  // const discount = useCalculateDiscount(price, discont_price)
 
   return (
     <div className={style.item_container}>

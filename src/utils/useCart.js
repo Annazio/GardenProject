@@ -17,4 +17,3 @@ export function useCart(){
     return result
 } 
 
-

@@ -2,10 +2,14 @@ import React from 'react'
 import style from './style.module.css'
 import { useCart } from '../../utils/useCart';
 import PhoneForm from '../PhoneForm';
+import { useSelector } from 'react-redux';
 
 export default function Order() {
-  const cart = useCart();
-  const totalSum = cart.reduce((acc, { count, price }) => acc + count * price, 0)
+  // const cart = useCart();
+  // const totalSum = cart.reduce((acc, { count, price }) => acc + count * price, 0)
+  const {list} = useSelector((state) => state.cartSlice)
+
+  const totalSum = list.reduce((acc, { count, price }) => acc + count * price, 0)
 
   return (
     <div className={style.order_wrapper}>

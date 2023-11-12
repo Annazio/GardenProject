@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import InputUI from '../../UI/InputUI'
-import { priceFilter } from '../../store/slice/productSlice'
+// import { priceFilter } from '../../store/slice/productSlice'
 import { useDispatch } from 'react-redux'
 
-export default function ProductsFilter() {
+export default function ProductsFilter({priceFilter}) {
 
   const [price, setPrice] = useState ({min: 0, max: Infinity})
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(priceFilter(price));
-  }, [price, dispatch])
+  }, [price, dispatch, priceFilter])
 
   
   const priceHandler ={
@@ -33,7 +33,6 @@ export default function ProductsFilter() {
              name='min'
              value={price.min=== 0? '': price.min}
              onChange={changePrice}
-
             />            
             
 

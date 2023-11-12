@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../ProductItem';
 import { fetchProducts } from '../../store/slice/productSlice';
-import style from './style.module.css'
+// import style from './style.module.css'
 import ProductsFilter from '../ProductsFilter';
+import Container from '../../UI/Container';
+import { priceFilter } from '../../store/slice/productSlice';
 
 export default function ProductList({id}) {
 
@@ -14,24 +16,25 @@ const dispatch = useDispatch()
     }, [id, dispatch])
 
     const {status, list} = useSelector(({products}) => products)
+    console.log("🚀 ~ file: index.jsx:19 ~ ProductList ~ list:", list)
 
   
 
   return (
     <div>
-      <ProductsFilter/>
+      <ProductsFilter priceFilter={priceFilter}/>
     <div>
         {
         status === 'ready'
         ?
       
-        <div className={style.product_list_container}>
+        <Container>
             {
               list
               .filter(({show}) => Object.values(show).every(elem => elem))
               .map(product => <ProductItem key={product.id} {...product}/>)
             }
-        </div>
+        </Container>
 
         : status === 'error'
         ? <h2>Loading error</h2>

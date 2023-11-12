@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/slice/cartSlice';
 import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
 import { getProductId } from '../../store/slice/productSlice';
+import { useState } from 'react';
 
 
 export default function ProductItem({ id, image, title, price, discont_price }) {
@@ -12,6 +13,7 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const addProduct = () => dispatch(addToCart(id))
+  const [isHovered, setisHovered] = useState(false)
 
   const discount = useCalculateDiscount(price, discont_price)
 
@@ -24,19 +26,27 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
 
 
   return (
-    <div>
+    <div className={style.wrapper}>
 
-      <div onClick={() => handleSingleProduct(id)}>
+      <div className={`${style.image_wrapper} ${isHovered ? style.hovered : ''}`} 
+                      onMouseEnter={() => setisHovered(true)}
+                      onMouseLeave={() => setisHovered(false)}
+                      onClick={() => handleSingleProduct(id)}>
         <img src={"http://localhost:3333" + image} alt={title} className={style.product_img} />
-      </div>
+      
 
-      <ButtonUI text="Add to cart" onClick={addProduct} />
+          
+      </div>
+      {isHovered &&(
+         <ButtonUI content="add_to_cart_btn" text="Add to cart" onClick={addProduct} />
+      )}   
 
       <div onClick={() => handleSingleProduct(id)}>
-        <p>{price}$</p>
-        {discont_price && <p>{discont_price}$</p>}
-        {discont_price && price && <p>-{discount}%</p>}
-
+        <div className={style.price_container}>
+          <p className={style.actual_price}>{price}<span>$</span> </p>
+          {discont_price && <p className={style.old_price}>{discont_price}$</p>}
+          {discont_price && price && <p className={style.discount}>-{discount}%</p>}
+        </div>
         <h3 className={style.product_title}>{title}</h3>
       </div>
     </div>

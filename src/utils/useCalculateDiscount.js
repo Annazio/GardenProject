@@ -1,5 +1,3 @@
-
-
 export function useCalculateDiscount(price, discont_price){
 
     if(price <=0 || discont_price <=0){

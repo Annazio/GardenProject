@@ -2,7 +2,12 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../store/slice/productSlice';
 import ProductItem from '../ProductItem';
+import Container from '../../UI/Container';
 import ProductsFilter from '../ProductsFilter';
+import { priceFilter } from '../../store/slice/productSlice';
+
+
+
 
 export default function SaleList({id}) {
 
@@ -20,19 +25,19 @@ export default function SaleList({id}) {
     
   return (
     <div >
-      <ProductsFilter/>
-    <div>
+      <ProductsFilter priceFilter={priceFilter}/>
+    <div >
         {
             status === 'ready'
             ?
         
-            <div>
+            <Container>
                 {
                 saleArr
                 .filter(({show}) => Object.values(show).every(elem => elem))
                 .map(product => <ProductItem key={product.id} {...product}/>)
                 }
-            </div>
+            </Container>
 
             : status === 'error'
             ? <h2>Loading error</h2>
