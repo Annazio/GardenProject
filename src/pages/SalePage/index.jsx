@@ -4,7 +4,7 @@ import SaleList from '../../component/SaleList'
 export default function Sale() {
   return (
     <div className='container'>
-        <h3>Products with sale</h3>
+        <h1>Products with sale</h1>
         <SaleList/>
     </div>
   )

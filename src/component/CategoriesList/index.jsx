@@ -15,9 +15,8 @@ export default function CategoriesList() {
 
     
   return (
-    <div className={style.categories_wrapper}>
-      <h1>Categories</h1>
-    {
+    <>
+     {
         status === 'ready'
         ?
       
@@ -34,7 +33,7 @@ export default function CategoriesList() {
         ? <h2>Loading</h2>
         : ''
     }
-    </div>
+   </>
   )
 }
 

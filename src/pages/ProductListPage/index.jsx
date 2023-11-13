@@ -5,7 +5,7 @@ export default function ProductListPage() {
   return (
     <div className="container">
       <div>
-         <h3>All Products</h3>
+         <h1>All Products</h1>
          <ProductList/>
        </div>
     </div>

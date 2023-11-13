@@ -21,19 +21,22 @@ export default function Slider() {
   const { status, list } = useSelector(({ categories }) => categories)
 
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate('/categories');
-  }
+  // const handleClick = () => {
+  //   navigate('/categories');
+  // }
 
 
   return (
     <div className='container'>
       <section id="slider_section">
         <div className={style.section_title}>
-          <h3>Catalog</h3>
-          <ButtonUI text="All Categories" onClick={handleClick} />
+          <h1>Catalog</h1>
+          <Link className={style.all_categories_link} to="/categories">
+             <p className={style.categories_title}>All Categories</p>
+          </Link>
+          {/* <ButtonUI text="All Categories" onClick={handleClick} /> */}
         </div>
 
 

@@ -1,0 +1,10 @@
+.input_wrapper{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+/* gap: 40px; */
+padding: 80px 0 20px;
+
+font-weight: 600;
+font-size: 20px;
+}

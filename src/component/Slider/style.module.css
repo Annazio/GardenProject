@@ -42,5 +42,22 @@
 
 .section_title {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 100px;
+  margin: 40px 0 20px;
+}
+
+.all_categories_link{
+  border: 1px solid var(--grey);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  width: 120px;
+  height: 30px;
+  padding: 7px;
+  color: var(--grey);
+}
+.categories_title{
+  color: var(--grey);
 }
