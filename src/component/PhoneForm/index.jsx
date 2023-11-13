@@ -40,7 +40,8 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
           content = {contentInput}
           validation={phoneInput}
         />
-        {errors.phone && <p style={{ color: 'red' }}>{errors.phone.message}</p>}
+        {/* {errors.phone && <p style={{ color: 'red' }}>{errors.phone.message}</p>} */}
+        {errors.phone && <p className={`${style.error}  ${style.active}`}>{errors.phone.message}</p>}
     
         <ButtonUI text={textButton} content={contentButton} type="submit" />
       </form>

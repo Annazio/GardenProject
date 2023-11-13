@@ -15,7 +15,7 @@ export default function Discount
           </div>
 
 
-          <div className={style.get_discount}>
+          <div>
             <h4 className={style.discount_title}>
               5% off <span>on the first order</span>
             </h4>

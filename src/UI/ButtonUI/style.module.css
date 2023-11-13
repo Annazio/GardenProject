@@ -32,7 +32,8 @@
     background-color: transparent;
     border: 2px solid white;
     border-radius: 20px;
-    width: 473px;
+    max-width: 473px;
+    width: 100%;
     height: 75px;
     margin-top: 30px;
 }
@@ -62,7 +63,7 @@
 .ui_btn.add_to_cart_btn{
     position: absolute;
     z-index: 90;
-    background-color: green;
+    background-color: var(--green);
 }
 
 

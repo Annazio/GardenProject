@@ -54,6 +54,8 @@ export default function ProductsFilter({ priceFilter }) {
             Discounted items
             <InputUI
             type="checkbox"
+            name='discounted'
+
             />
         </label>
       </div>

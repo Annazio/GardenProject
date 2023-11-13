@@ -4,7 +4,6 @@ import { fetchCategories } from '../../store/slice/categoriesSlice';
 import { Swiper, SwiperSlide } from "swiper/react";
 import style from "./style.module.css"
 import { Pagination } from 'swiper/modules';
-import ButtonUI from '../../UI/ButtonUI'
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -21,13 +20,6 @@ export default function Slider() {
   const { status, list } = useSelector(({ categories }) => categories)
 
 
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate('/categories');
-  // }
-
-
   return (
     <div className='container'>
       <section id="slider_section">
@@ -36,7 +28,6 @@ export default function Slider() {
           <Link className={style.all_categories_link} to="/categories">
              <p className={style.categories_title}>All Categories</p>
           </Link>
-          {/* <ButtonUI text="All Categories" onClick={handleClick} /> */}
         </div>
 
 
