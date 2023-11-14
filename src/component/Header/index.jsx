@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from '../Nav'
 import Logo from "../../assets/images/Logo.png"
 import shopping_bag from "../../assets/icons/shopping_bag.svg"
@@ -11,16 +11,20 @@ import Burger from '../Burger'
 export default function Header() {
 
   const navigate = useNavigate();
-
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handleClick = () => {
     navigate('/');
   }
 
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={style.header}>
       <div className='container'>
-        <div className={style.wrapper}>
+        <div className={style.header_wrapper}>
 
           <div className={style.left_part}>
               <Link to="/">
@@ -41,7 +45,7 @@ export default function Header() {
 
 
         </div>
-        <Burger />
+        <Burger onClick={toggleMenu}/>
       </div>
     </header>
   )

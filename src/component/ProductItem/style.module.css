@@ -1,10 +1,7 @@
 .wrapper{
     position: relative;
 }
-.image_wrapper{
-    /* position: relative; */
-   
-}
+
 .price_container{
     display: flex;
     justify-content: space-between;

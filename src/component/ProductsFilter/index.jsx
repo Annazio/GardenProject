@@ -3,8 +3,13 @@ import InputUI from '../../UI/InputUI'
 // import { priceFilter } from '../../store/slice/productSlice'
 import { useDispatch } from 'react-redux'
 import style from "./style.module.css"
+import { useLocation } from 'react-router-dom'
 
 export default function ProductsFilter({ priceFilter }) {
+
+  const location = useLocation()
+  const isOnSalePage = location.pathname === '/products/sale'
+
 
   const [price, setPrice] = useState({ min: 0, max: Infinity })
   const dispatch = useDispatch();
@@ -50,14 +55,14 @@ export default function ProductsFilter({ priceFilter }) {
       </div>
 
       <div>
-        <label>
+      {!isOnSalePage &&<label>
             Discounted items
             <InputUI
             type="checkbox"
             name='discounted'
 
             />
-        </label>
+        </label>}
       </div>
     
       <div>

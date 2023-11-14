@@ -4,10 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const read = () => JSON.parse(localStorage.getItem('cart'));
 const write = (state) => localStorage.setItem('cart', JSON.stringify(state.list));
 
-const initialState = { list: read() ?? []
-    //  list: read()?.list ?? [],
-    //  count: read()?.count ?? 0
-}
+const initialState = { list: read() ?? []}
 
 
 export const cartSlice = createSlice({
