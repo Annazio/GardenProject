@@ -37,5 +37,17 @@
     display: block;
 }
 
+.burger_btn{
+    display: none;
+}
+
 @media (max-width: 768px){
+.burger_btn{
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    z-index: 10; 
+}
 }

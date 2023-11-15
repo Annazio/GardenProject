@@ -6,8 +6,6 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { fetchProducts } from '../../store/slice/productSlice';
-import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
-import { Link } from 'react-router-dom';
 import ProductItem from '../ProductItem';
 
 export default function SaleSlider() {
@@ -19,7 +17,6 @@ export default function SaleSlider() {
 
     const {status, list} = useSelector(({products}) => products)
 
-    // const discount = useCalculateDiscount(price, discont_price)
     const saleArr = list.filter(item=> item.discont_price)
 
   
@@ -42,6 +39,24 @@ export default function SaleSlider() {
             freeMode={true}     
             pagination={{ clickable: true }}
             modules={[Pagination]}
+            breakpoints={{
+              401: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+              },
+            }}
           >
           
             {

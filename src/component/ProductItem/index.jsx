@@ -26,19 +26,20 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
 
 
   return (
-    <div className={style.wrapper}>
+    <div 
+        onMouseEnter={() => setisHovered(true)}
+        onMouseLeave={() => setisHovered(false)}
+        className={style.wrapper}>
 
       <div className={`${style.image_wrapper} ${isHovered ? style.hovered : ''}`} 
-                      onMouseEnter={() => setisHovered(true)}
-                      onMouseLeave={() => setisHovered(false)}
-                      onClick={() => handleSingleProduct(id)}>
-        <img src={"http://localhost:3333" + image} alt={title} className={style.product_img} />
-      
-
-          
+           onClick={() => handleSingleProduct(id)}>
+        <img src={"http://localhost:3333" + image} alt={title} className={style.product_img} />     
       </div>
       {isHovered &&(
-         <ButtonUI content="add_to_cart_btn" text="Add to cart" onClick={addProduct} />
+         <ButtonUI 
+         content="add_to_cart_btn"
+         text="Add to cart" 
+         onClick={addProduct} />
       )}   
          {/* <ButtonUI content="add_to_cart_btn" text="Add to cart" onClick={addProduct} /> */}
 

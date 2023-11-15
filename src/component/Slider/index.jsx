@@ -7,7 +7,7 @@ import { Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CategoryItem from '../CategoryItem';
 
 export default function Slider() {
@@ -42,6 +42,24 @@ export default function Slider() {
                 freeMode={true}
                 pagination={{ clickable: true }}
                 modules={[Pagination]}
+                breakpoints={{
+                  401: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                  },
+                  // 1024: {
+                  //   slidesPerView: 5,
+                  //   spaceBetween: 50,
+                  // },
+                }}
               >
                 {
                   list.map(category => <SwiperSlide key={category.id}>

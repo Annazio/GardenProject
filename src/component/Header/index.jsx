@@ -5,21 +5,19 @@ import shopping_bag from "../../assets/icons/shopping_bag.svg"
 import style from "./style.module.css"
 import ButtonUI from '../../UI/ButtonUI'
 import { Link, useNavigate } from 'react-router-dom';
-import Burger from '../Burger'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 
 export default function Header() {
 
   const navigate = useNavigate();
-  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const [nav, setNav] = useState(false)
 
   const handleClick = () => {
     navigate('/');
   }
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
 
   return (
     <header className={style.header}>
@@ -36,7 +34,7 @@ export default function Header() {
           </div>
 
           <div className={style.right_part}>
-            <Nav />
+            <Nav nav={nav} />
             <Link className={style.bag_link} to="/shoppingcard">
               <img src={shopping_bag} alt="Shopping Bag" />
             </Link>
@@ -45,7 +43,11 @@ export default function Header() {
 
 
         </div>
-        <Burger onClick={toggleMenu}/>
+        <div
+            onClick={() => setNav(!nav)}
+            className={style.burger_btn}>
+        {nav ?  <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
+        </div>
       </div>
     </header>
   )
