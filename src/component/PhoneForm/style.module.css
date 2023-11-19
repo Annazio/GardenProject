@@ -5,12 +5,12 @@
 	position: relative;
 }
 .error{
-	position: absolute;
+	/* position: absolute; */
 	padding-left: 10px;
 
 	z-index: 10;
-	top: -40px;
-	transform: translateY(150%);
+	/* top: -40px; */
+	/* transform: translateY(150%); */
 
 
 	 font-weight: 600;
@@ -22,6 +22,6 @@
 }
 
 .active{
-	transform: translateY(0);
+	/* transform: translateY(0); */
 	opacity: 1;
 }

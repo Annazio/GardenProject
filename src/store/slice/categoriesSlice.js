@@ -38,6 +38,28 @@ export const categorySlice = createSlice({
                     price: elem.price >= payload.min && elem.price <= payload.max
                 }
             }))
+        },
+        discountHandler(state, {payload}){
+          state.productsList = state.productsList.map((elem) => ({
+            ...elem,
+            show: {
+              ...elem.show,
+              checked: payload ? !!elem.discont_price : true,
+            }
+          }));
+        },
+        sort(state, {payload}){
+          if (payload === 1){
+           state.productsList.sort((a, b) => a.title.localeCompare(b.title))
+          }else if (payload === 2){
+            state.productsList.sort((a, b) => b.title.localeCompare(a.title))
+          }else if (payload === 3){
+            state.productsList.sort((a, b) => a.price - b.price)
+          }else if (payload === 4){
+            state.productsList.sort((a, b) => b.price - a.price)
+          }else{
+            state.productsList.sort((a, b) => a.id - b.id)
+          }
         }
     },
     extraReducers: (builder) => {
@@ -57,7 +79,8 @@ export const categorySlice = createSlice({
             })
             .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
                 state.status ='ready';
-                const show = {price: true};
+                // const show = {price: true};
+                const show = { price: true, checked: true };
                 state.productsList = payload.data.map((elem) => ({...elem, show}));
                 state.title = payload.category.title;
             })
@@ -69,4 +92,4 @@ export const categorySlice = createSlice({
 
 
 export default categorySlice.reducer;
-export const {priceFilter} = categorySlice.actions;
+export const {priceFilter,  sort, discountHandler} = categorySlice.actions;

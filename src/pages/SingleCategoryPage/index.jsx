@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductItem from '../../component/ProductItem'
-import { fetchCategoryById, priceFilter } from '../../store/slice/categoriesSlice'
+import { fetchCategoryById, priceFilter, sort, discountHandler } from '../../store/slice/categoriesSlice'
 import ProductsFilter from '../../component/ProductsFilter'
 import Container from '../../UI/Container'
 
@@ -28,16 +28,10 @@ export default function SingleCategoryPage() {
     }, [id, dispatch])
     
 
-
-  
-   
-    
-     
-
   return (
     <div className='container'>
         <h1>{title}</h1>
-        <ProductsFilter priceFilter={priceFilter}/>
+        <ProductsFilter priceFilter={priceFilter} sort={sort} discountHandler={discountHandler}/>
         
         {
             status === 'ready'

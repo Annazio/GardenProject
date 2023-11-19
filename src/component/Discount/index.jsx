@@ -2,6 +2,8 @@ import React from 'react'
 import style from "./style.module.css"
 import dwarf from "../../assets/images/Dwarf.png"
 import PhoneForm from '../PhoneForm'
+import { ToastContainer } from 'react-toastify'
+
 
 
 export default function Discount
@@ -28,9 +30,11 @@ export default function Discount
               textButton="Get a discount"
               contentButton="get_discount"
             />
+            {/* <ToastContainer /> */}
           </div>
         </div>
       </div>
+      
     </div>
   )
 }

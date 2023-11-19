@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ShoppingCartItem from '../ShoppingCartItem'
 import { useCart } from '../../utils/useCart'
 import ByCondition from '../../UI/ByCondition'
@@ -12,7 +12,10 @@ import { useSelector } from 'react-redux'
 
 export default function ShoppingCart() {
    const list = useCart()
-   console.log("🚀 ~ file: index.jsx:15 ~ ShoppingCart ~ list:", list)
+
+   
+
+  
 
   // useEffect(() => {() => cart()}, [cart])
   // const {cart, products} = useSelector(state => state);
@@ -46,7 +49,7 @@ export default function ShoppingCart() {
           </ByCondition>
         </div>
 
-        <Order />
+        <Order/>
       </div>
     </div>
   )

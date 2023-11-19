@@ -91,3 +91,11 @@
     color: red;
     background-color: transparent;
 }
+
+@media (max-width: 768px){
+    .ui_btn.header_btn{
+        bottom: 100px;
+        left: 50px;
+        position: fixed;
+    }
+}

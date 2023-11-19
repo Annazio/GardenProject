@@ -5,7 +5,7 @@ import { fetchProducts } from '../../store/slice/productSlice';
 // import style from './style.module.css'
 import ProductsFilter from '../ProductsFilter';
 import Container from '../../UI/Container';
-import { priceFilter } from '../../store/slice/productSlice';
+import { priceFilter, sort, discountHandler } from '../../store/slice/productSlice';
 
 export default function ProductList({id}) {
 
@@ -22,7 +22,7 @@ const dispatch = useDispatch()
 
   return (
     <div>
-      <ProductsFilter priceFilter={priceFilter}/>
+      <ProductsFilter priceFilter={priceFilter} sort={sort} discountHandler={discountHandler}/>
     <div>
         {
         status === 'ready'

@@ -1,4 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { useDispatch } from "react-redux";
+import { cleanCart } from "./cartSlice";
+
+const write = (data) => localStorage.setItem('cart', JSON.stringify(data));
 
 
 const initialState ={
@@ -17,6 +21,8 @@ export const fetchDiscount = createAsyncThunk(
                 'Content-Type': 'application/json; charset=UTF-8',
             },
         }) 
+        const result = await resp.json();
+        return result;
       } catch(error){
         console.error(error)
         return rejectWithValue({message: "error fetch discount"})
@@ -32,7 +38,10 @@ export const fetchOrder = createAsyncThunk(
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8',
             },
-        }) 
+        })
+        const result = await resp.json();
+        return result;
+
       } catch(error){
         console.error(error)
         return rejectWithValue({message: "error fetch order"})
@@ -54,7 +63,9 @@ export const orderDiscountSlice = createSlice({
             })
             .addCase(fetchDiscount.fulfilled, (state, {payload}) => {
                 state.status ='ready';
-                state.list = payload;
+                if(payload.status==="OK"){
+                console.log("Your discount code is sent on this phone number");
+                }
             })
             .addCase(fetchDiscount.rejected, (state) => {
                 state.status ='error'
@@ -65,12 +76,14 @@ export const orderDiscountSlice = createSlice({
             })
             .addCase(fetchOrder.fulfilled, (state, {payload}) => {
                 state.status ='ready';
-                state.list = payload;
+                if(payload.status==="OK"){
+                console.log("Your cart is cleaned");
+                }
             })
             .addCase(fetchOrder.rejected, (state) => {
                 state.status ='error'
             })
-    }
+     }
 })
 
 export default orderDiscountSlice.reducer

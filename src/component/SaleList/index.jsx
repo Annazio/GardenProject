@@ -4,7 +4,7 @@ import { fetchProducts } from '../../store/slice/productSlice';
 import ProductItem from '../ProductItem';
 import Container from '../../UI/Container';
 import ProductsFilter from '../ProductsFilter';
-import { priceFilter } from '../../store/slice/productSlice';
+import { priceFilter, sort, discountHandler } from '../../store/slice/productSlice';
 
 
 
@@ -25,7 +25,7 @@ export default function SaleList({id}) {
     
   return (
     <div >
-      <ProductsFilter priceFilter={priceFilter}/>
+      <ProductsFilter priceFilter={priceFilter} sort={sort} discountHandler={discountHandler}/>
     <div >
         {
             status === 'ready'

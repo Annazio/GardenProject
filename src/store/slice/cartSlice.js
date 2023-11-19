@@ -7,6 +7,8 @@ const write = (state) => localStorage.setItem('cart', JSON.stringify(state.list)
 const initialState = { list: read() ?? []}
 
 
+
+
 export const cartSlice = createSlice({
     name: 'cart',
     initialState,
@@ -37,10 +39,22 @@ export const cartSlice = createSlice({
         removeItem(state, {payload}){
             state.list = state.list.filter(({id}) => id !== payload)
             write(state)
-        }
+        },
+        cleanCart(state){
+            // console.log("🚀 ~ file: cartSlice.js:44 ~ cleanCart ~ cleanCart:")
+            state.list = []
+            write(state)
+        }, 
+       
     }
 })
 
-export const {addToCart, incrAmount, decrAmount, removeItem} = cartSlice.actions;
+
+
+export const {addToCart, incrAmount, decrAmount, removeItem, cleanCart} = cartSlice.actions;
 export default cartSlice.reducer
+
+
+
+
 

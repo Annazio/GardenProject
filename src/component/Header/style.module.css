@@ -15,10 +15,12 @@
 .left_part{
     display: flex;
     gap: 60px;
+    z-index: 20;
 }
-.logo {
+/* .logo {
     cursor: pointer;
-}
+    
+} */
 
 .right_part{
     display: flex;
@@ -29,12 +31,30 @@
 
 .bag_link{
     max-width: 200px;
+    position: relative;
 }
 
 .right_part img{
     width: 30px;
     height: 30px;
     display: block;
+}
+.cartCount{
+    position: absolute;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+	height: 20px;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    bottom: -25%;
+	right: -20%;
+	font-weight: 800;
+    z-index: 100; 
+    display: flex;
+    justify-content: center;
 }
 
 .burger_btn{
@@ -49,5 +69,15 @@
     top: 30px;
     cursor: pointer;
     z-index: 10; 
+}
+.bag_link{
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    z-index: 20;
+}
+.bag_link img{
+width: 50px;
+height: 50px;
 }
 }

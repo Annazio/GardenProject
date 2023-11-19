@@ -6,9 +6,17 @@ import style from "./style.module.css"
 import ButtonUI from '../../UI/ButtonUI'
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { useCart } from '../../utils/useCart'
 
 
 export default function Header() {
+
+  const list = useCart();
+
+  
+  const cartCount = list?.reduce((acc, { count }) => {
+    return acc + count;
+  }, 0);
 
   const navigate = useNavigate();
 
@@ -25,9 +33,9 @@ export default function Header() {
         <div className={style.header_wrapper}>
 
           <div className={style.left_part}>
-              <Link to="/">
-                <img src={Logo} alt="Logo" />
-              </Link>
+            <Link to="/" >
+              <img src={Logo} alt="Logo" />
+            </Link>
             <a href='#slider_section'>
               <ButtonUI text="Catalog" content="header_btn" onClick={handleClick} />
             </a>
@@ -37,17 +45,21 @@ export default function Header() {
             <Nav nav={nav} />
             <Link className={style.bag_link} to="/shoppingcard">
               <img src={shopping_bag} alt="Shopping Bag" />
+              {cartCount > 0 && <p className={style.cartCount}>{cartCount}</p>}
             </Link>
+
+            <div
+              onClick={() => setNav(!nav)}
+              className={style.burger_btn}>
+              {nav ? <AiOutlineClose size={40} /> : <AiOutlineMenu size={40} />}
+            </div>
+            
           </div>
 
 
 
         </div>
-        <div
-            onClick={() => setNav(!nav)}
-            className={style.burger_btn}>
-        {nav ?  <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/>}
-        </div>
+
       </div>
     </header>
   )
