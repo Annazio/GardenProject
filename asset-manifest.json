@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/GardenProject/static/css/main.393034ea.css",
-    "main.js": "/GardenProject/static/js/main.7f89d025.js",
+    "main.css": "/GardenProject/static/css/main.cfdf00af.css",
+    "main.js": "/GardenProject/static/js/main.d75c307c.js",
     "static/media/flowers.png": "/GardenProject/static/media/flowers.219152481630c1bc0f3f.png",
     "static/media/NotFound.png": "/GardenProject/static/media/NotFound.4ce8433694ffc824059b.png",
     "static/media/Dwarf.png": "/GardenProject/static/media/Dwarf.c036eea09188ab215dcb.png",
     "static/media/shopping_bag.svg": "/GardenProject/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
     "index.html": "/GardenProject/index.html",
-    "main.393034ea.css.map": "/GardenProject/static/css/main.393034ea.css.map",
-    "main.7f89d025.js.map": "/GardenProject/static/js/main.7f89d025.js.map"
+    "main.cfdf00af.css.map": "/GardenProject/static/css/main.cfdf00af.css.map",
+    "main.d75c307c.js.map": "/GardenProject/static/js/main.d75c307c.js.map"
   },
   "entrypoints": [
-    "static/css/main.393034ea.css",
-    "static/js/main.7f89d025.js"
+    "static/css/main.cfdf00af.css",
+    "static/js/main.d75c307c.js"
   ]
 }
