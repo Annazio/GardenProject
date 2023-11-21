@@ -79,7 +79,6 @@ export const categorySlice = createSlice({
             })
             .addCase(fetchCategoryById.fulfilled, (state, {payload}) => {
                 state.status ='ready';
-                // const show = {price: true};
                 const show = { price: true, checked: true };
                 state.productsList = payload.data.map((elem) => ({...elem, show}));
                 state.title = payload.category.title;

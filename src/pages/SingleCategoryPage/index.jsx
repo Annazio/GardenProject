@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductItem from '../../component/ProductItem'
 import { fetchCategoryById, priceFilter, sort, discountHandler } from '../../store/slice/categoriesSlice'
 import ProductsFilter from '../../component/ProductsFilter'
 import Container from '../../UI/Container'
+import style from "./style.module.css"
+
 
 export default function SingleCategoryPage() {
 
@@ -13,24 +15,14 @@ export default function SingleCategoryPage() {
 
     const {status, productsList, title} = useSelector(({categories}) => categories)
     
-    // const [tempList, setTempList] = useState()
     useEffect(() => { 
-      
-      
-      
-      // if(!list.show){
          dispatch(fetchCategoryById(id))
-      // }else{
-      //   console.log("🚀 ~ file: index.jsx:19 ~ SingleCategoryPage ~ list:", list)
-      //   setTempList(list.filter(({show}) => Object.values(show).every(elem => elem)))
-      // }
-
     }, [id, dispatch])
     
 
   return (
     <div className='container'>
-        <h1>{title}</h1>
+        <h1 className={style.title}>{title}</h1>
         <ProductsFilter priceFilter={priceFilter} sort={sort} discountHandler={discountHandler}/>
         
         {

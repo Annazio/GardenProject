@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import InputUI from '../../UI/InputUI'
-// import { priceFilter} from '../../store/slice/productSlice'
 import { useDispatch } from 'react-redux'
 import style from "./style.module.css"
 import { useLocation } from 'react-router-dom'
-// import { discountHandler } from '../../store/slice/productSlice'
 
 export default function ProductsFilter({ priceFilter, sort, discountHandler }) {
 
@@ -40,9 +38,6 @@ export default function ProductsFilter({ priceFilter, sort, discountHandler }) {
     setChecked(value)
   }
     
-
-
-
   const selectOptions = [
     {id:1, title: 'by title: from A to Z', value: 1},
     {id:2, title: 'by title: from Z to A', value: 2},
@@ -54,48 +49,45 @@ export default function ProductsFilter({ priceFilter, sort, discountHandler }) {
     dispatch(sort(+event.target.value));
   }
 
-
   return (
     <div className={style.input_wrapper}>
-      <div>
-        <label>
-          Price:
+      <div className={style.price_filter}>
+          Price
           <InputUI
             placeholder="from"
             type="number"
-            name='min'
+            name="min"
+            content="price_filter"
             value={price.min === 0 ? '' : price.min}
             onChange={changePrice}
           />
-
           <InputUI
             placeholder="to"
             type="number"
             name='max'
+            content="price_filter"
             value={price.max === Infinity ? '' : price.max}
             onChange={changePrice}
           />
-
-        </label>
       </div>
 
-      <div>
-      {!isOnSalePage &&<label>
+      {!isOnSalePage &&
+      <div className={style.discount_filter}>
             Discounted items
             <InputUI
             type="checkbox"
             name='discounted'
             value={checked}
+            content="discount_filter"
             onChange={changeCheckbox}
             />
-        </label>}
-        
-      </div>
+      </div>}
     
-      <div>
+      <div className={style.select_filter}>
         <span>Sorted</span>
-         <select onChange={selectHandler}>
-          {/* <option selected disabled>By default</option> */}
+         <select 
+                className={style.select}
+                onChange={selectHandler}>
           <option defaultValue="">By default</option>
           {
             selectOptions.map(elem => (
@@ -105,7 +97,8 @@ export default function ProductsFilter({ priceFilter, sort, discountHandler }) {
             ))
           }
          </select>
+         </div>
       </div>
-    </div>
+    
   )
 }

@@ -72,18 +72,6 @@ export default function SingleItemPage() {
                 <p className={style.discount}>
                   -{discount(singleProduct.price, singleProduct.discont_price)}<span>%</span>
                   </p>} 
-
-
-                {/* 1. Variante  */}
-                {/* <p className={style.regular_price}>{singleProduct.price}<span>$</span></p>
-
-                {singleProduct.discont_price && 
-                <p className={style.old_price} >{singleProduct.discont_price}$</p>}
-                
-                {singleProduct.discont_price && singleProduct.price && 
-                  <p className={style.discount}>
-                  -{discount(singleProduct.price, singleProduct.discont_price)}<span>%</span>
-                  </p>} */}
               </div>
 
               <ButtonUI text="To cart" content="to_cart_btn" onClick={addProduct} />

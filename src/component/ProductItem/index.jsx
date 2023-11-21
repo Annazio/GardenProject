@@ -69,8 +69,6 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
          text="Add to cart" 
          onClick={addProduct} />
       )}   
-         {/* <ButtonUI content="add_to_cart_btn" text="Add to cart" onClick={addProduct} /> */}
-
 
       <div onClick={() => handleSingleProduct(id)}>
         <div className={style.price_container}>

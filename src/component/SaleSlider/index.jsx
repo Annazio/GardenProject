@@ -23,9 +23,7 @@ export default function SaleSlider() {
   return (
     <div className="container">
       <section id="sale_slider_section">
-        {/* <div className={style.section_title}> */}
           <h1 className={style.section_title}>Sale</h1>
-        {/* </div> */}
 
         {status === "ready" ? (
           <div className={style.swiper_container}>

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import ProductItem from '../ProductItem';
 import { fetchProducts } from '../../store/slice/productSlice';
-// import style from './style.module.css'
 import ProductsFilter from '../ProductsFilter';
 import Container from '../../UI/Container';
 import { priceFilter, sort, discountHandler } from '../../store/slice/productSlice';

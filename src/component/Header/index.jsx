@@ -24,6 +24,7 @@ export default function Header() {
 
   const handleClick = () => {
     navigate('/');
+    setNav(false)
   }
 
 
@@ -32,34 +33,37 @@ export default function Header() {
       <div className='container'>
         <div className={style.header_wrapper}>
 
-          <div className={style.left_part}>
-            <Link to="/" >
-              <img src={Logo} alt="Logo" />
+          <div className={`${style.left_part} ${style[nav && 'active']}`}>
+            <Link 
+            onClick={() => setNav(false)}
+            to="/" >
+              <div className={style.logo}>
+                <img src={Logo} alt="Logo" />
+              </div>
+              
             </Link>
             <a href='#slider_section'>
               <ButtonUI text="Catalog" content="header_btn" onClick={handleClick} />
             </a>
           </div>
 
-          <div className={style.right_part}>
-            <Nav nav={nav} />
-            <Link className={style.bag_link} to="/shoppingcard">
+          <div className={`${style.right_part} ${style[nav && 'active']}`}>
+            <Nav onClick={() => setNav(false)} />
+            <Link 
+                className={style.bag_link} 
+                onClick={() => setNav(false)}
+                to="/shoppingcard">
               <img src={shopping_bag} alt="Shopping Bag" />
               {cartCount > 0 && <p className={style.cartCount}>{cartCount}</p>}
-            </Link>
+            </Link>           
+          </div>
 
             <div
               onClick={() => setNav(!nav)}
               className={style.burger_btn}>
               {nav ? <AiOutlineClose size={40} /> : <AiOutlineMenu size={40} />}
             </div>
-            
-          </div>
-
-
-
         </div>
-
       </div>
     </header>
   )

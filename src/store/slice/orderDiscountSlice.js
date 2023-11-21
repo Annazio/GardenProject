@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { useDispatch } from "react-redux";
-import { cleanCart } from "./cartSlice";
 
-const write = (data) => localStorage.setItem('cart', JSON.stringify(data));
+// const write = (data) => localStorage.setItem('cart', JSON.stringify(data));
 
 
 const initialState ={

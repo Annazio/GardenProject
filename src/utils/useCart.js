@@ -4,7 +4,6 @@ import { fetchProducts } from "../store/slice/productSlice";
 
 
 export function useCart(){
-    // const {cart, products} = useSelector(state => state);
     const cart = useSelector(state => state.cart);
     const  products = useSelector(state => state.products);
     

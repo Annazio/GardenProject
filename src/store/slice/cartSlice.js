@@ -41,7 +41,6 @@ export const cartSlice = createSlice({
             write(state)
         },
         cleanCart(state){
-            // console.log("🚀 ~ file: cartSlice.js:44 ~ cleanCart ~ cleanCart:")
             state.list = []
             write(state)
         }, 

@@ -2,6 +2,7 @@
     font-size: 18px;
 	background-color: var(--white);
     border-radius: 20px;
+    border: 1px solid var(--black);
 }
 
 .ui_input.discount_input{
@@ -14,11 +15,31 @@
     padding: 25px 50px;
 }
 .ui_input.order_input{
-    border: 1px solid var(--black);
 	max-width: 445px;
 	width: 100%;
 	height: 70px;
     font-weight: 500;
     padding: 25px;
     color: #929292;
+}
+
+.ui_input.price_filter{
+    padding: 10px;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ACACAC;
+	border-radius: 5px;
+}
+
+.ui_input.price_filter::-webkit-outer-spin-button,
+.ui_input.price_filter::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.ui_input.discount_filter{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
 }
