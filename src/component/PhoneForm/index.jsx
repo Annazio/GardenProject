@@ -5,9 +5,8 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 import { fetchDiscount, fetchOrder } from '../../store/slice/orderDiscountSlice'
 import style from "./style.module.css"
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import { useCart } from '../../utils/useCart'
 import { cleanCart } from '../../store/slice/cartSlice'
 
 export default function PhoneForm({ textButton, contentButton, contentInput, placeholderInput, nameInput, typeInput }) {
@@ -28,20 +27,20 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
     dispatch(cleanCart())
     reset()
     
-    // toast(nameInput === 'order'? `Thanks for your order!` : `5% discount code has been sent to the entered phone number `, {
-    //   position: "top-right",
-    //   autoClose: 1000,
-    //   hideProgressBar: true,
-    //   pauseOnHover: true,
-    //   draggable: true,
-    //   progress: undefined,
-    //   theme: "light",
-    //   style: {
-    //     background: "green", 
-    //     color: "white", 
+    toast(nameInput === 'order'? `Thanks for your order!` : `5% discount code has been sent to the entered phone number `, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      style: {
+        background: "green", 
+        color: "white", 
       
-    //   }
-    // })
+      }
+    })
 
   }
 
@@ -69,7 +68,6 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
         {errors.phone && <p className={`${style.error}  ${style.active}`}>{errors.phone.message}</p>}
     
         <ButtonUI text={textButton} content={contentButton} type="submit" />
-        {/* <ToastContainer/> */}
       </form>
      
     // </div>

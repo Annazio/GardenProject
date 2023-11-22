@@ -1,7 +1,6 @@
 import style from './style.module.css'
 import { useCart } from '../../utils/useCart';
 import PhoneForm from '../PhoneForm';
-import { ToastContainer } from 'react-toastify';
 
 export default function Order() {
   const list = useCart();
@@ -28,9 +27,7 @@ export default function Order() {
         contentInput="order_input"
         textButton="Order"
         contentButton="order_btn"
-      
       />
-      <ToastContainer/>
     </div>
   )
 }

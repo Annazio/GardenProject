@@ -9,6 +9,8 @@ import Wrap from './component/Wrap';
 import ProductsListPage from './pages/ProductListPage';
 import SingleCategoryPage from './pages/SingleCategoryPage';
 import SalePage from './pages/SalePage'
+import { ToastContainer } from 'react-toastify';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path ="*" element={<NotFoundPage />}/>
         </Route>
       </Routes>
+      <ToastContainer/>
     </div>
   );
 }

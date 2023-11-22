@@ -6,19 +6,16 @@ import { addToCart } from '../../store/slice/cartSlice';
 import { useCalculateDiscount } from '../../utils/useCalculateDiscount';
 import { getProductId } from '../../store/slice/productSlice';
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-
-
 
 export default function ProductItem({ id, image, title, price, discont_price }) {
 
   const navigate = useNavigate()
   const dispatch = useDispatch();
-  // const addProduct = () => dispatch(addToCart(id))
   const addProduct = () => {
     dispatch(addToCart(id))
-    toast(`Added to shopping cart!`, {
+    toast(`Added to the shopping cart!`, {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: true,
@@ -30,15 +27,9 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
         background: "green", 
         color: "white", 
       boxShadow: 'none'
-      
       }
     })
-  
   }
-
-
-
-
 
   const [isHovered, setIsHovered] = useState(false)
 
@@ -50,10 +41,7 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
     navigate('/products/:id')
   }
 
-
-
   return (
- 
     <div 
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -73,14 +61,6 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
       <div onClick={() => handleSingleProduct(id)}>
         <div className={style.price_container}>
 
-          {/* Variante 1 */}
-          {/* <p className={style.actual_price}>{price}<span>$</span> </p>
-          {discont_price && <p className={style.old_price}>{discont_price}$</p>}
-          {discont_price && price && <p className={style.discount}>-{discount}%</p>} */}
-
-
-          {/* Variante2 */}
-
           {discont_price && <p className={style.actual_price}>{discont_price}$</p>}
           
           {discont_price ? 
@@ -94,8 +74,7 @@ export default function ProductItem({ id, image, title, price, discont_price }) 
         </div>
         <h3 className={style.product_title}>{title}</h3>
       </div>
-      <ToastContainer/>
+      
     </div>
-    
   )
 }

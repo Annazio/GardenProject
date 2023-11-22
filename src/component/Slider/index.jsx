@@ -34,8 +34,6 @@ export default function Slider() {
               className="mySwiper"
               // slidesPerView={4}
               spaceBetween={20}
-              // pagination={{ clickable: true }}
-              // modules={[Pagination]}
               loop={true}
               autoplay={{
                 delay: 2500,

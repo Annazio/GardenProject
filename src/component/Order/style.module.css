@@ -1,8 +1,9 @@
 .order_wrapper{
 	border: 2px solid var(--black);
 	border-radius: 21px;
-    min-height: 392px;
-	padding: 20px;
+    /* min-height: 392px; */
+height: 100%;
+    padding: 20px;
     width: 500px;
 }
 .order_details_title{

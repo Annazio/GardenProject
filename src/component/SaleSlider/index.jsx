@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import style from "./style.module.css";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { fetchProducts } from "../../store/slice/productSlice";
 import ProductItem from "../ProductItem";
-import 'swiper/css/navigation'
 
 export default function SaleSlider() {
   const dispatch = useDispatch();
@@ -38,7 +37,7 @@ export default function SaleSlider() {
                 disableOnInteraction: false,
               }}
               navigation={true}
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay]}
               breakpoints={{
                 401: {
                   slidesPerView: 1,

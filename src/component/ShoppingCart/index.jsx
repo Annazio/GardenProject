@@ -11,9 +11,7 @@ import Order from '../Order'
 export default function ShoppingCart() {
    const list = useCart()
 
-
   return (
-
     <div className={style.cart_wrapper}>
 
       <div className={style.cart_header}>

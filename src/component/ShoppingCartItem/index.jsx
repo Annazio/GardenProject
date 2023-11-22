@@ -6,13 +6,31 @@ import { IoMdClose } from 'react-icons/io';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
 
+
 export default function ShoppingCartItem({id, image, title, count, price, discont_price}) {
   const dispatch = useDispatch()
 
   const decr = () => dispatch(decrAmount(id))
   const incr = () => dispatch(incrAmount(id))
-  const remove = () => dispatch(removeItem(id))
 
+  const remove = () => dispatch(removeItem(id))
+  //   const remove = () => {
+  //   dispatch(removeItem(id))
+  //   toast(`Removed from the shopping cart!`, {
+  //     position: "top-right",
+  //     autoClose: 1000,
+  //     hideProgressBar: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //     style: {
+  //       background: "green", 
+  //       color: "white", 
+  //     boxShadow: 'none'
+  //     }
+  //   })
+  // }
 
   return (
     <div className={style.item_container}>
