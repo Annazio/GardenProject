@@ -22,11 +22,24 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
   const dispatch = useDispatch()
 
 
+  // const onSubmit = (data) => {
+  //   nameInput === 'order'? dispatch(fetchOrder(data.phone)) : dispatch(fetchDiscount(data.phone))
+  //   dispatch(cleanCart())
+  //   reset()
   const onSubmit = (data) => {
-    nameInput === 'order'? dispatch(fetchOrder(data.phone)) : dispatch(fetchDiscount(data.phone))
-    dispatch(cleanCart())
-    reset()
     
+        // nameInput === 'order' ? 
+        // ((dispatch(fetchOrder(data.phone)), dispatch(cleanCart()), reset())) : 
+        // (dispatch(fetchDiscount(data.phone)), reset());
+   
+          if (nameInput === 'order') {
+              dispatch(fetchOrder(data.phone));
+              dispatch(cleanCart());
+          } else {
+              dispatch(fetchDiscount(data.phone));
+          }     
+          reset();
+      
     toast(nameInput === 'order'? `Thanks for your order!` : `5% discount code has been sent to the entered phone number `, {
       position: "top-right",
       autoClose: 1000,
@@ -41,7 +54,7 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
       
       }
     })
-
+   
   }
 
   const phoneInput = register('phone', {

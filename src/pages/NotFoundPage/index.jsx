@@ -4,8 +4,10 @@ import NotFound from '../../assets/images/NotFound.png'
 
 export default function NotFoundPage() {
   return (
+    <div className="container">
     <section className={style.notfound}>
       <img src={NotFound} alt="Not found page " />
     </section>
+    </div>
   )
 }

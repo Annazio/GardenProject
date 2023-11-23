@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .left_part,
@@ -15,9 +16,9 @@
 
 .left_part {
   display: flex;
-  /* gap: 60px; */
+  gap: 60px;
   justify-content: space-between;
-  gap: 20%;
+  /* gap: 20%; */
   z-index: 30;
 }
 .logo {
@@ -68,9 +69,10 @@
 @media (max-width: 768px) {
   .burger_btn {
     display: block;
-    position: fixed;
-    right: 30px;
-    top: 30px;
+    /* position: fixed; */
+    position: absolute;
+    right: 20px;
+    top: 15px;
     cursor: pointer;
     z-index: 20;
   }

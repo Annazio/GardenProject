@@ -55,7 +55,7 @@ export default function Header() {
                 to="/shoppingcard">
               <img src={shopping_bag} alt="Shopping Bag" />
               {cartCount > 0 && <p className={style.cartCount}>{cartCount}</p>}
-            </Link>           
+            </Link>        
           </div>
 
             <div

@@ -1,15 +1,24 @@
 .wrapper {
-  position: relative;
+  position: relative; 
+
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%; */
 }
 .image_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 320px;
+  max-height: 320px;
 }
 .image_wrapper img {
-  /* width: 100%; */
+  width: 100%;
   object-fit: contain;
+  min-height: 320px;
+
+  /* margin: auto; */
 }
 .price_container {
   display: flex;
@@ -36,4 +45,5 @@
 .product_title {
   font-weight: 500;
   font-size: 16px;
+  margin-top: 10px;
 }

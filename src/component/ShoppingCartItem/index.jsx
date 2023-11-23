@@ -5,47 +5,40 @@ import {  decrAmount, incrAmount, removeItem } from '../../store/slice/cartSlice
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
+import { getProductId } from '../../store/slice/productSlice';
 
 
 export default function ShoppingCartItem({id, image, title, count, price, discont_price}) {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const decr = () => dispatch(decrAmount(id))
-  const incr = () => dispatch(incrAmount(id))
+  function handleSingleProduct(id) {
+    dispatch(getProductId(id));
+    localStorage.setItem("ProductId", JSON.stringify(id))
+    navigate('/products/:id')
+  }
+  // const decr = () => dispatch(decrAmount(id))
+  // const incr = () => dispatch(incrAmount(id))
+  // const remove = () => dispatch(removeItem(id))
+  
 
-  const remove = () => dispatch(removeItem(id))
-  //   const remove = () => {
-  //   dispatch(removeItem(id))
-  //   toast(`Removed from the shopping cart!`, {
-  //     position: "top-right",
-  //     autoClose: 1000,
-  //     hideProgressBar: true,
-  //     pauseOnHover: true,
-  //     draggable: true,
-  //     progress: undefined,
-  //     theme: "light",
-  //     style: {
-  //       background: "green", 
-  //       color: "white", 
-  //     boxShadow: 'none'
-  //     }
-  //   })
-  // }
 
-  return (
+
+    return (
     <div className={style.item_container}>
       
-        <div className={style.image_wrapper}>
+        <div className={style.image_wrapper} onClick={() => handleSingleProduct(id)}>
           <img src={"http://localhost:3333" + image} alt={title} />
         </div>
 
         <div className={style.title_counter_wrapper}>
-        <p>{title}</p>
+        <p onClick={() => handleSingleProduct(id)}>{title}</p>
         
           <div className={style.counter}>
-              <AiOutlineMinus className={style.decr_btn} onClick={decr}/>
+              <AiOutlineMinus className={style.decr_btn} onClick={() => dispatch(decrAmount(id))}/>
               <p>{count}</p>
-              <AiOutlinePlus className={style.incr_btn} onClick={incr}/>
+              <AiOutlinePlus className={style.incr_btn} onClick={() => dispatch(incrAmount(id))}/>
           </div>
         </div>
 
@@ -57,7 +50,7 @@ export default function ShoppingCartItem({id, image, title, count, price, discon
           <p className={style.actual_price}>{price}<span>$</span></p>
           }
        </div>
-        <IoMdClose className={style.remove_btn} onClick={remove}/>
+        <IoMdClose className={style.remove_btn} onClick={() => dispatch(removeItem(id))}/>
     </div>
   )
 }

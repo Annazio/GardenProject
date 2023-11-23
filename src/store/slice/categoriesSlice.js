@@ -7,22 +7,31 @@ const initialState ={
     productsList: []
 }
 
-
 export const fetchCategories = createAsyncThunk(
     'category/fetchCategory',
-    async() => {
+    async(_, { rejectWithValue }) => {
+        try {
         const response = await fetch ('http://localhost:3333/categories/all')
         const data = await response.json();
-        return data
+        return data;
+        } catch (error) {
+            console.error(error);
+            return rejectWithValue ({ message: "error fetch all categories" })
+        }
     }  
 )
 
 export const fetchCategoryById = createAsyncThunk(
     'category/fetchCategoryById',
-    async(id) => {
+    async(id, { rejectWithValue }) => {
+        try{
         const response = await fetch (`http://localhost:3333/categories/${id}`)
         const data = await response.json();
-        return data
+        return data;
+        } catch (error){
+          console.error(error);
+          return rejectWithValue({ message: "error fetch single category" });
+        }
     }  
 )
 

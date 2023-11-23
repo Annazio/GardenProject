@@ -39,7 +39,6 @@ export const fetchOrder = createAsyncThunk(
         })
         const result = await resp.json();
         return result;
-
       } catch(error){
         console.error(error)
         return rejectWithValue({message: "error fetch order"})
