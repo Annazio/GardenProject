@@ -8,14 +8,14 @@ export default function Nav({ ...other }) {
 
 
   return (
-    <div>
+   
         <nav className={style.nav}{ ...other } >
             {
             links.map(({id, title, link}) =>
             <NavLink className={className}  key={id} to={link}>{title}</NavLink> )
             }
         </nav>
-    </div>
+  
   )
 }
 

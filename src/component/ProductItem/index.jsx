@@ -75,7 +75,10 @@ export default function ProductItem({
       <div onClick={() => handleSingleProduct(id)}>
         <div className={style.price_container}>
           {discont_price && (
-            <p className={style.actual_price}>{discont_price}$</p>
+            <p className={style.actual_price}>
+              {discont_price}
+             <span>$</span>
+            </p>
           )}
 
           {discont_price ? (

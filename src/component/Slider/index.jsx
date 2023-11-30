@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../../store/slice/categoriesSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import style from "./style.module.css";
-import { Autoplay} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
@@ -32,7 +32,6 @@ export default function Slider() {
           <div className={style.swiper_container}>
             <Swiper
               className="mySwiper"
-              // slidesPerView={4}
               spaceBetween={20}
               loop={true}
               autoplay={{
@@ -57,7 +56,7 @@ export default function Slider() {
                 1400: {
                   slidesPerView: 4,
                   spaceBetween: 40,
-                }
+                },
               }}
             >
               {list.map((category) => (

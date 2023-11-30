@@ -15,7 +15,7 @@ export default function ShoppingCart() {
     <div className={style.cart_wrapper}>
 
       <div className={style.cart_header}>
-        <h1>Shopping Cart</h1>
+        <h1 className={style.title}>Shopping Cart</h1>
         <Link className={style.back_btn} to="/products/all">
           <p>Back to the store</p>
           <IoIosArrowForward />
@@ -23,7 +23,9 @@ export default function ShoppingCart() {
       </div>
 
       <div className={style.cart_details_container}>
-        <div>
+
+        
+        <div className={style.cart_list_wrapper}>
           {
             list?.map(item => <ShoppingCartItem key={item.id} {...item} />)
           }
@@ -33,7 +35,9 @@ export default function ShoppingCart() {
         </div>
 
         <Order/>
+        
       </div>
+     
     </div>
   )
 }

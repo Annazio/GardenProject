@@ -15,6 +15,10 @@
     --transition: .3s ease-in;
   
   }
+  
+input{
+background-color: var(--white);
+  }
 
 ul, ol, li{
   list-style: none;
@@ -56,4 +60,10 @@ h1{
 p{
   font-family: Montserrat; 
   color: var(--black);
+}
+
+@media (max-width: 480px){
+  .container{
+  padding: 0 15px;
+  }
 }

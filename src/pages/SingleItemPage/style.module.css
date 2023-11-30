@@ -1,68 +1,91 @@
-.product_info{
-    margin-bottom: 180px;
-    margin-top: 140px;
+.product_info {
+  margin-top: 60px;
 }
-.product_title{
-    font-size: 36px;
-    font-weight: 600;
+.product_title {
+  font-size: 36px;
+  font-weight: 600;
 }
-
-.product_wrapper{
-    display: flex;
-    padding: 0 60px;
-    margin-top: 30px;
-    justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 60px;
+.product_wrapper {
+  display: flex;
+  padding: 0 60px;
+  margin-top: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
 }
-
-.image_wrapper{
-    max-width: 710px;
-	width: 100%;
-	min-height: 710px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.image_wrapper {
+  flex-shrink: 0;
+  max-width: 710px;
+  width: 100%;
+  min-height: 710px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.detail_info{
-    max-width: 410px;
+.image_wrapper img {
+  width: inherit;
+  height: 100%;
+  object-fit: contain;
 }
-
-.price{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    /* gap: 5px; */
-    font-weight: 600;
+.detail_info {
+  max-width: 410px;
 }
-.actual_price{
-    font-size: 70px;
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: 600;
 }
-
-.actual_price span{
-    font-size: 20px;
+.actual_price {
+  font-size: 70px;
 }
-.old_price{
+.actual_price span {
+  font-size: 20px;
+}
+.old_price {
   color: var(--grey);
   text-decoration: line-through;
   font-weight: 500;
   font-size: 20px;
 }
-.discount{
-    color: var(--pink);
-    font-size: 28px;
+.discount {
+  color: var(--pink);
+  font-size: 28px;
 }
-.discount span{
-    font-size: 20px;
+.discount span {
+  font-size: 20px;
 }
-.description{
-    border-top: 1px dashed #C0C0C0;
-    padding-top: 25px;
-    font-size: 20px;
-} 
-.description_title{
-    font-weight: 600;
-    margin-bottom: 15px;
+.description {
+  border-top: 1px dashed #c0c0c0;
+  padding-top: 25px;
+  font-size: 20px;
+}
+.description_title {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 1400px) {
+  .image_wrapper {
+    min-height: auto;
+  }
+}
+@media (max-width: 768px) {
+  .product_info {
+    margin-top: 40px;
+  }
+  .product_wrapper{
+    padding: 0;
+		gap: 10px;
+  }
+  
+}
+@media (max-width: 400px) {
+  .product_info {
+    margin-top: 30px;
+  }
+  .actual_price{
+    font-size: 40px;
+  }
 }

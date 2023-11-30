@@ -44,7 +44,10 @@ export const categorySlice = createSlice({
                 ...elem,
                 show: {
                     ...elem.show,
-                    price: elem.price >= payload.min && elem.price <= payload.max
+                    price: (
+                      (elem.discont_price && elem.discont_price >= payload.min && elem.discont_price <= payload.max) ||
+                      (!elem.discont_price && elem.price >= payload.min && elem.price <= payload.max)
+                    )
                 }
             }))
         },
@@ -63,9 +66,13 @@ export const categorySlice = createSlice({
           }else if (payload === 2){
             state.productsList.sort((a, b) => b.title.localeCompare(a.title))
           }else if (payload === 3){
-            state.productsList.sort((a, b) => a.price - b.price)
+            state.productsList.sort((a, b) => 
+            (a.discont_price || a.price) - (b.discont_price || b.price)
+            )
           }else if (payload === 4){
-            state.productsList.sort((a, b) => b.price - a.price)
+            state.productsList.sort((a, b) => 
+            (b.discont_price || b.price) - (a.discont_price || a.price)
+            )
           }else{
             state.productsList.sort((a, b) => a.id - b.id)
           }

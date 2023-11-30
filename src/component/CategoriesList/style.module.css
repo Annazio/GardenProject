@@ -7,3 +7,16 @@
 	grid-column-gap: 35px;
 	grid-row-gap: 60px;
 }
+
+@media (max-width: 768px) {
+	.categories_list_container {
+		margin: 60px 0 40px; 
+		grid-row-gap: 45px;
+	}
+}
+@media (max-width: 400px) {
+	.categories_list_container {
+		margin: 30px 0 30px; 
+		grid-row-gap: 40px;
+	}
+}

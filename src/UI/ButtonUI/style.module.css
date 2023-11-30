@@ -34,7 +34,7 @@
     max-width: 473px;
     width: 100%;
     height: 75px;
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .ui_btn.to_cart_btn{
@@ -100,10 +100,23 @@
     background-color: transparent;
 }
 
+
+.ui_btn:active{
+    transform: translateY(2px)
+}
+
+.ui_btn.add_to_cart_btn:active{
+transform: translate(-50%, 2px)
+}
+
 @media (max-width: 768px){
     /* .ui_btn.header_btn{
         bottom: 100px;
         left: 50px;
         position: fixed;
     } */
+    .ui_btn.to_cart_btn{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }

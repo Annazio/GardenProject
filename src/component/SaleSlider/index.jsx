@@ -28,7 +28,6 @@ export default function SaleSlider() {
           <div className={style.swiper_container}>
             <Swiper
               className="mySwiper"
-              // slidesPerView={4}
               spaceBetween={20}
               loop={true}
               autoplay={{

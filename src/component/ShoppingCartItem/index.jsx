@@ -18,13 +18,7 @@ export default function ShoppingCartItem({id, image, title, count, price, discon
     localStorage.setItem("ProductId", JSON.stringify(id))
     navigate('/products/:id')
   }
-  // const decr = () => dispatch(decrAmount(id))
-  // const incr = () => dispatch(incrAmount(id))
-  // const remove = () => dispatch(removeItem(id))
   
-
-
-
     return (
     <div className={style.item_container}>
       
@@ -33,7 +27,7 @@ export default function ShoppingCartItem({id, image, title, count, price, discon
         </div>
 
         <div className={style.title_counter_wrapper}>
-        <p onClick={() => handleSingleProduct(id)}>{title}</p>
+        <p onClick={() => handleSingleProduct(id)} className={style.title}>{title}</p>
         
           <div className={style.counter}>
               <AiOutlineMinus className={style.decr_btn} onClick={() => dispatch(decrAmount(id))}/>
@@ -43,7 +37,9 @@ export default function ShoppingCartItem({id, image, title, count, price, discon
         </div>
 
         <div className={style.price_container}>
-          {discont_price && <p className={style.actual_price}>{discont_price}$</p>}
+          {discont_price && <p className={style.actual_price}>
+          {discont_price}
+          <span>$</span></p>}
           {discont_price ? 
           <p className={style.old_price}>{price}<span>$</span></p>
           : 

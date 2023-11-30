@@ -1,47 +1,55 @@
-.sale{
-    background-color: #A1E2EB;
-    background-image: url("../../assets//images/flowers.png");
-    background-repeat: no-repeat;
-	background-position-x: right;
-	background-position-y: bottom;
-    min-height: 600px;
-    max-width: 1440px;
-    margin: auto;
-    margin-top: 80px ;
+.sale {
+  background-color: #a1e2eb;
+  background-image: url("../../assets//images/flowers.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: bottom;
+  min-height: 600px;
+  max-width: 1440px;
+  margin: auto;
+  margin-top: 60px;
 }
-.sale_wrapper{
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    color: var(--white);
-    font-weight: 700; 
-    gap: 60px;
+.sale_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  color: var(--white);
+  font-weight: 700;
+  gap: 60px;
 }
 
-.title{
-    margin-top: 130px;
-    font-size: 80px;
+.title {
+  margin-top: 130px;
+  font-size: 80px;
 }
-.title span{
-    display: block;
-    font-size: 60px;
+.title span {
+  display: block;
+  font-size: 60px;
 }
 
 @media (max-width: 1100px) {
-	.sale{
-		background-color: #A1E2EB;
-        background-image: none;
-	}
-.sale_wrapper{
+  .sale {
+    background-color: #a1e2eb;
+    background-image: none;
+  }
+  .sale_wrapper {
     text-align: center;
-}
+  }
 }
 
-@media (max-width: 768px){
-.title{
+@media (max-width: 768px) {
+  .sale {
+  margin-top: 40px;
+  }
+  .title {
     font-size: 60px;
-}
-.title span{
+  }
+  .title span {
     font-size: 40px;
+  }
 }
+@media (max-width: 400px) {
+  .sale {
+  margin-top: 10px;
+  }
 }

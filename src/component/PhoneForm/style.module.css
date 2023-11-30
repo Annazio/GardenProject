@@ -1,27 +1,28 @@
-.phone_form{
-    display: flex;
-	flex-direction: column;
-	gap: 25px;
-	position: relative;
+.phone_form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
+  /* max-width: 500px; */
 }
-.error{
-	/* position: absolute; */
-	padding-left: 10px;
-
-	z-index: 10;
-	/* top: -40px; */
-	/* transform: translateY(150%); */
-
-
-	 font-weight: 600;
-	font-size: 18px; 
-
-	color: var(--red);
-	opacity: 0;
-	transition: opacity var(--hover-time) ease, transform var(--hover-time) ease;
+.input_wrapper {
+  position: relative;
+}
+.error {
+  position: absolute;
+  padding-left: 10px;
+  z-index: 0;
+  top: -50px;
+  transform: translateY(150%);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--red);
+  opacity: 0;
+  transition: opacity var(--transition), transform var(--transition);
+  /* transition: all .4s ease; */
 }
 
-.active{
-	/* transform: translateY(0); */
-	opacity: 1;
+.error.active {
+  transform: translateY(0);
+  opacity: 1;
 }

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className={style.footer}>
-      <div className="container">
+  <footer className={style.footer}>
+    <div className="container">
         <div className={style.contacts}>
           <div className={style.contacts_wrapper}>
             <h2 className={style.title}>Contact</h2>
@@ -26,16 +26,16 @@ export default function Footer() {
 
           <div className={style.address_wrapper}>
             <h2 className={style.title}>Address</h2>
-            <div className={style.coordination_wrapper}>
+            <address className={style.coordination_wrapper}>
               <Link>
                 <p className={style.address}>Linkstraße 2, 8 OG, 10785,</p>
                 <span className={style.address}>Berlin, Deutschland</span>
               </Link>
-            </div>
+            </address>
             <p className={style.working_hours}>Working hours:</p>
             <p className={style.time}>24 hours a day</p>
           </div>
-        </div>
+        </div> 
 
         <div className={style.map_wrapper}>
           <iframe

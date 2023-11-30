@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style.module.css";
-import dwarf from "../../assets/images/Dwarf.png";
+import dwarf from "../../assets/images/dwarf.svg";
 import PhoneForm from "../PhoneForm";
 
 export default function Discount() {

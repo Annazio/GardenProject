@@ -17,7 +17,6 @@
 .section_title {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 100px;
   margin: 40px 0 20px;
 }
@@ -33,4 +32,12 @@
 }
 .categories_title {
   color: var(--grey);
+}
+
+@media (max-width: 768px) {
+	.section_title {
+		flex-direction: column;
+		gap: 40px;
+    margin-bottom: 40px;
+	}
 }

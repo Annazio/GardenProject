@@ -17,7 +17,6 @@ export default function SingleItemPage() {
 
   const discount = useCalculateDiscount;
   const dispatch = useDispatch();
-  // const addProduct = () => dispatch(addToCart(+id));
 
   const addProduct = () => {
     dispatch(addToCart(+id))
@@ -53,14 +52,17 @@ export default function SingleItemPage() {
           <div className={style.product_wrapper}>
 
             <div className={style.image_wrapper}>
-              <img src={"http://localhost:3333/" + singleProduct.image} />
+              {singleProduct.id ?
+              <img src={"http://localhost:3333/" + singleProduct.image} />:
+              <h3>Loading...</h3>
+              }
             </div>
 
             <div className={style.detail_info}>
 
               <div className={style.price}>
 
-              {singleProduct.discont_price && <p className={style.actual_price}>{singleProduct.discont_price} <span>$</span></p>}
+              {singleProduct.discont_price && <p className={style.actual_price}>{singleProduct.discont_price}<span>$</span></p>}
           
               {singleProduct.discont_price ? 
               <p className={style.old_price}>{singleProduct.price}<span>$</span></p>

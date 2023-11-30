@@ -15,9 +15,6 @@ const dispatch = useDispatch()
     }, [id, dispatch])
 
     const {status, list} = useSelector(({products}) => products)
-    console.log("🚀 ~ file: index.jsx:19 ~ ProductList ~ list:", list)
-
-  
 
   return (
     <div>

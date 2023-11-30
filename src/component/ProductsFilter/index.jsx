@@ -84,11 +84,12 @@ export default function ProductsFilter({ priceFilter, sort, discountHandler }) {
       </div>}
     
       <div className={style.select_filter}>
-        <span>Sorted</span>
+        {/* <span>Sorted</span> */}
+        Sorted
          <select 
                 className={style.select}
                 onChange={selectHandler}>
-          <option defaultValue="">By default</option>
+          <option defaultValue="">by default</option>
           {
             selectOptions.map(elem => (
               <option key={elem.id}  value={elem.value}>

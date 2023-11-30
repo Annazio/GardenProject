@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './style.module.css'
-import NotFound from '../../assets/images/NotFound.png'
+import NotFound from '../../assets/images/notFound.svg'
 
 export default function NotFoundPage() {
   return (

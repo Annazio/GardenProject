@@ -70,6 +70,7 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
   return (
     // <div>
       <form className={style.phone_form} onSubmit={handleSubmit(onSubmit)}>
+        <div className={style.input_wrapper}>
         <InputUI
           placeholder={placeholderInput}
           type={typeInput}
@@ -77,9 +78,9 @@ export default function PhoneForm({ textButton, contentButton, contentInput, pla
           content = {contentInput}
           validation={phoneInput}
         />
-        {/* {errors.phone && <p style={{ color: 'red' }}>{errors.phone.message}</p>} */}
-        {errors.phone && <p className={`${style.error}  ${style.active}`}>{errors.phone.message}</p>}
-    
+        {/* {errors.phone && <p className={`${style.error}  ${style.active}`}>{errors.phone.message}</p>} */}
+        <p className={`${style.error}  ${style[errors.phone ? "active" : ""]}`}>{errors?.phone?.message}</p>
+        </div>
         <ButtonUI text={textButton} content={contentButton} type="submit" />
       </form>
      

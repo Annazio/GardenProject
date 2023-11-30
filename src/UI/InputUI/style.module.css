@@ -21,6 +21,16 @@
     font-weight: 500;
     padding: 25px;
     color: #929292;
+    position: relative;
+    z-index: 10;
+}
+
+.ui_input:focus{
+    background-color: var(--white);
+}
+
+.ui_input:active{
+    background-color: var(--white);
 }
 
 .ui_input.price_filter{
@@ -42,4 +52,6 @@
     width: 40px;
     height: 40px;
     border-radius: 5px;
+
 }
+
