@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/GardenProject/static/css/main.cfdf00af.css",
-    "main.js": "/GardenProject/static/js/main.d75c307c.js",
-    "static/media/flowers.png": "/GardenProject/static/media/flowers.219152481630c1bc0f3f.png",
-    "static/media/NotFound.png": "/GardenProject/static/media/NotFound.4ce8433694ffc824059b.png",
-    "static/media/Dwarf.png": "/GardenProject/static/media/Dwarf.c036eea09188ab215dcb.png",
+    "main.css": "/GardenProject/static/css/main.d25f9157.css",
+    "main.js": "/GardenProject/static/js/main.f6d47d0f.js",
+    "static/media/flowers.svg": "/GardenProject/static/media/flowers.d39af1cbbd062bb41792.svg",
+    "static/media/notFound.svg": "/GardenProject/static/media/notFound.76f2e6078ef51ae7ecca3db8c20bdc9a.svg",
+    "static/media/dwarf.svg": "/GardenProject/static/media/dwarf.6f40a66e48a4ae3d43051b4e06df43fe.svg",
+    "static/media/Logo.svg": "/GardenProject/static/media/Logo.5ea733f7db6ce55033115e1fd0b70c7c.svg",
     "static/media/shopping_bag.svg": "/GardenProject/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
     "index.html": "/GardenProject/index.html",
-    "main.cfdf00af.css.map": "/GardenProject/static/css/main.cfdf00af.css.map",
-    "main.d75c307c.js.map": "/GardenProject/static/js/main.d75c307c.js.map"
+    "main.d25f9157.css.map": "/GardenProject/static/css/main.d25f9157.css.map",
+    "main.f6d47d0f.js.map": "/GardenProject/static/js/main.f6d47d0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.cfdf00af.css",
-    "static/js/main.d75c307c.js"
+    "static/css/main.d25f9157.css",
+    "static/js/main.f6d47d0f.js"
   ]
 }
