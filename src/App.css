@@ -1,35 +1,41 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
-    scroll-behavior: smooth;
-  
-    --black: #000;
-    --white: #fff;
-    --green:  #339933;
-    --grey: #8B8B8B;
-    --pink: #FF32A1;
-    --red: red;   
-    
-    --transition: .3s ease-in;
-  
-  }
-  
-input{
-background-color: var(--white);
-  }
+  scroll-behavior: smooth;
 
-ul, ol, li{
+  --ui-color: #339933;
+  --accent-color: #ff32a1;
+  --ui-linear: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+
+  --black: #000;
+  --white: #fff;
+  --f1-white: #f1fff1;
+  --8b-grey:#8b8b8b;
+  --a7-grey: #a7a7a7;
+  --ac-grey: #acacac;
+  --c0-grey: #c0c0c0;
+  --6c-grey: #6C6C6C;
+  --92-grey: #929292;
+  --red: red;
+  --blue: rgb(0, 187, 255);
+  --a1-blue: #a1e2eb;
+  
+  --transition: 0.3s ease-in;
+}
+
+ul,
+ol,
+li {
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: var(--black);
-  }
-
-.app{
+}
+.app {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
@@ -37,33 +43,28 @@ a{
   font-family: Montserrat;
   font-weight: 400;
 }
-
-.container{
+.container {
   max-width: 1440px;
   width: 100%;
   padding: 0 30px;
   margin: 0 auto;
 }
-  
-
-img{
+img {
   max-width: 100%;
   object-fit: cover;
 }
-
-h1{
-  font-family: Montserrat; 
+h1 {
+  font-family: Montserrat;
   font-size: 40px;
   font-weight: 700;
 }
-
-p{
-  font-family: Montserrat; 
+p {
+  font-family: Montserrat;
   color: var(--black);
 }
 
-@media (max-width: 480px){
-  .container{
-  padding: 0 15px;
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
   }
 }

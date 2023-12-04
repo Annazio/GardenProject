@@ -5,8 +5,8 @@ import style from "./style.module.css";
 import { useCalculateDiscount } from "../../utils/useCalculateDiscount";
 import { fetchSingleProduct } from "../../store/slice/productSlice";
 import { useEffect } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SingleItemPage() {
   const { singleProduct, productId, status } = useSelector(
@@ -19,7 +19,7 @@ export default function SingleItemPage() {
   const dispatch = useDispatch();
 
   const addProduct = () => {
-    dispatch(addToCart(+id))
+    dispatch(addToCart(+id));
     toast(`Added to shopping cart!`, {
       position: "top-right",
       autoClose: 1000,
@@ -29,12 +29,11 @@ export default function SingleItemPage() {
       progress: undefined,
       theme: "light",
       style: {
-        background: "green", 
-        color: "white", 
-      
-      }
-    })
-  }
+        background: "green",
+        color: "white",
+      },
+    });
+  };
 
   useEffect(() => {
     dispatch(fetchSingleProduct(id));
@@ -50,45 +49,59 @@ export default function SingleItemPage() {
         <div className={style.product_info}>
           <h1 className={style.product_title}>{singleProduct.title}</h1>
           <div className={style.product_wrapper}>
-
             <div className={style.image_wrapper}>
-              {singleProduct.id ?
-              <img src={"http://localhost:3333/" + singleProduct.image} />:
-              <h3>Loading...</h3>
-              }
+              {singleProduct.id ? (
+                <img src={"http://localhost:3333/" + singleProduct.image} />
+              ) : (
+                <h3>Loading...</h3>
+              )}
             </div>
 
             <div className={style.detail_info}>
-
               <div className={style.price}>
+                {singleProduct.discont_price && (
+                  <p className={style.actual_price}>
+                    {singleProduct.discont_price}
+                    <span>$</span>
+                  </p>
+                )}
 
-              {singleProduct.discont_price && <p className={style.actual_price}>{singleProduct.discont_price}<span>$</span></p>}
-          
-              {singleProduct.discont_price ? 
-              <p className={style.old_price}>{singleProduct.price}<span>$</span></p>
-              : 
-              <p className={style.actual_price}>{singleProduct.price}<span>$</span></p>
-              }
-         
-               {singleProduct.discont_price && singleProduct.price && 
-                <p className={style.discount}>
-                  -{discount(singleProduct.price, singleProduct.discont_price)}<span>%</span>
-                  </p>} 
+                {singleProduct.discont_price ? (
+                  <p className={style.old_price}>
+                    {singleProduct.price}
+                    <span>$</span>
+                  </p>
+                ) : (
+                  <p className={style.actual_price}>
+                    {singleProduct.price}
+                    <span>$</span>
+                  </p>
+                )}
+
+                {singleProduct.discont_price && singleProduct.price && (
+                  <p className={style.discount}>
+                    -
+                    {discount(singleProduct.price, singleProduct.discont_price)}
+                    <span>%</span>
+                  </p>
+                )}
               </div>
 
-              <ButtonUI text="To cart" content="to_cart_btn" onClick={addProduct} />
+              <ButtonUI
+                text="To cart"
+                content="to_cart_btn"
+                onClick={addProduct}
+              />
 
               <div className={style.description}>
                 <p className={style.description_title}>Description </p>
                 <p>{singleProduct.description}</p>
               </div>
-
             </div>
-
           </div>
         </div>
       )}
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }

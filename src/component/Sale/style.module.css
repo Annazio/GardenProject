@@ -1,5 +1,5 @@
 .sale {
-  background-color: #a1e2eb;
+  background-color: var(--a1-blue);
   background-image: url("../../assets//images/flowers.svg");
   background-repeat: no-repeat;
   background-position-x: right;
@@ -29,14 +29,13 @@
 
 @media (max-width: 1100px) {
   .sale {
-    background-color: #a1e2eb;
+    background-color: var(--a1-blue);
     background-image: none;
   }
   .sale_wrapper {
     text-align: center;
   }
 }
-
 @media (max-width: 768px) {
   .sale {
   margin-top: 40px;

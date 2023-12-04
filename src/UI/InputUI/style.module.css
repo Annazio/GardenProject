@@ -4,9 +4,8 @@
     border-radius: 20px;
     border: 1px solid var(--black);
 }
-
 .ui_input.discount_input{
-    color: #6C6C6C;
+    color: var(--6c-grey);
     max-width: 475px;
 	width: 100%;
 	height: 75px;
@@ -20,38 +19,26 @@
 	height: 70px;
     font-weight: 500;
     padding: 25px;
-    color: #929292;
+    color: var(--92-grey);
     position: relative;
     z-index: 10;
 }
-
-.ui_input:focus{
-    background-color: var(--white);
-}
-
-.ui_input:active{
-    background-color: var(--white);
-}
-
 .ui_input.price_filter{
     padding: 10px;
     width: 100px;
     height: 40px;
     font-size: 16px;
     font-weight: 500;
-    color: #ACACAC;
+    color: var(--ac-grey);
 	border-radius: 5px;
 }
-
 .ui_input.price_filter::-webkit-outer-spin-button,
 .ui_input.price_filter::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 }
-
 .ui_input.discount_filter{
     width: 40px;
     height: 40px;
     border-radius: 5px;
-
 }
 

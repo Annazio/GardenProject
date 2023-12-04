@@ -12,7 +12,6 @@ export default function Order() {
   
   const roundedTotalSum = parseFloat(totalSum.toFixed(2));
 
-
   return (
     <div className={style.order_wrapper}>
       <h3 className={style.order_details_title}>Order details</h3>

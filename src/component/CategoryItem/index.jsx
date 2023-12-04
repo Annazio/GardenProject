@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 export default function CategoryItem({ id, image, title }) {
   return (
-
     <Link to={`/categories/${id}`}>
       <div className={style.category_item_wrapper}>
         <div className={style.image_wrapper}>

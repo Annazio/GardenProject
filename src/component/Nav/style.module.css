@@ -1,41 +1,27 @@
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
 }
-
-
 nav a {
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--black);
-    flex-shrink: 0;
-    position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--black);
+  flex-shrink: 0;
+  position: relative;
 }
-
 nav .active {
-    color: var(--green)
+  color: var(--ui-color);
 }
 
 @media (max-width: 762px) {
-nav {
-display: flex;
-flex-direction: column;
-justify-content: center;
-/* position: fixed; */
-/* left: 0;
-right: 0;
-top: 0;
-bottom: 0; */
-
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  nav a {
+    font-size: 28px;
+  }
 }
-
-nav a{
-font-size: 28px;
-
-}
-
-}
-	
-	

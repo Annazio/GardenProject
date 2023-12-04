@@ -1,14 +1,10 @@
 .wrapper {
-  position: relative; 
- /* zwecks Slider ergänzt */
-  /* max-width: 318px;
-  width: 100%; */
-  
+  position: relative;
 }
 .image_wrapper {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   min-height: 320px;
   max-height: 320px;
 }
@@ -32,12 +28,12 @@
   font-size: 20px;
 }
 .old_price {
-  color: var(--grey);
+  color: var(--8b-grey);
   text-decoration: line-through;
   font-weight: 500;
 }
 .discount {
-  color: var(--pink);
+  color: var(--accent-color);
 }
 .product_title {
   font-weight: 500;

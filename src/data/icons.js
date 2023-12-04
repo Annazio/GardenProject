@@ -5,7 +5,6 @@ export const icons = [
         id: 1,
         icon: <FaInstagram size={"50px"}/>,
         name: "Instagram",
-
     },
     {
         id: 2,

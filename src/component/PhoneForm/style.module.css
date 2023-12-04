@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 25px;
   position: relative;
-  /* max-width: 500px; */
 }
 .input_wrapper {
   position: relative;
@@ -12,16 +11,14 @@
   position: absolute;
   padding-left: 10px;
   z-index: 0;
-  top: -50px;
+  top: -45px;
   transform: translateY(150%);
   font-weight: 600;
   font-size: 18px;
-  color: var(--red);
+  color: var(--blue);
   opacity: 0;
   transition: opacity var(--transition), transform var(--transition);
-  /* transition: all .4s ease; */
 }
-
 .error.active {
   transform: translateY(0);
   opacity: 1;

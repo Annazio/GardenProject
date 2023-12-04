@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-  <footer className={style.footer}>
-    <div className="container">
+    <footer className={style.footer}>
+      <div className="container">
         <div className={style.contacts}>
           <div className={style.contacts_wrapper}>
             <h2 className={style.title}>Contact</h2>
             <Link className={style.phone} to="tel:+49 999 999 99 99">
               +49 999 999 99 99
             </Link>
-
             <ul className={style.social_icons}>
               {icons.map((el) => (
                 <li className={style.icon} key={el.id}>
@@ -35,7 +34,7 @@ export default function Footer() {
             <p className={style.working_hours}>Working hours:</p>
             <p className={style.time}>24 hours a day</p>
           </div>
-        </div> 
+        </div>
 
         <div className={style.map_wrapper}>
           <iframe

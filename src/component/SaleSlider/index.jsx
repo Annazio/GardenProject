@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
 import style from "./style.module.css";
-import { Autoplay} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { fetchProducts } from "../../store/slice/productSlice";
@@ -16,13 +16,12 @@ export default function SaleSlider() {
   }, [dispatch]);
 
   const { status, list } = useSelector(({ products }) => products);
-
   const saleArr = list.filter((item) => item.discont_price);
 
   return (
     <div className="container">
       <section id="sale_slider_section">
-          <h1 className={style.section_title}>Sale</h1>
+        <h1 className={style.section_title}>Sale</h1>
 
         {status === "ready" ? (
           <div className={style.swiper_container}>

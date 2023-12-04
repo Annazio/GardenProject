@@ -1,5 +1,5 @@
 .discount {
-  background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+  background: var(--ui-linear);
   min-height: 470px;
   max-width: 1440px;
   margin: auto;
@@ -18,14 +18,12 @@
   justify-self: center;
   align-items: start;
 }
-
 .discount_title {
   color: var(--white);
   font-weight: 700;
   font-size: 90px;
   margin-bottom: 50px;
 }
-
 .discount_title span {
   display: block;
   font-size: 50px;
@@ -45,7 +43,6 @@
     font-size: 60px;
     text-align: center;
   }
-
   .discount_title span {
     font-size: 30px;
   }

@@ -4,6 +4,7 @@
 .notfound img {
   width: 100%;
 }
+
 @media (max-width: 768px) {
   .notfound {
     margin: 15px 0 10px;

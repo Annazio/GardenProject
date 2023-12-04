@@ -30,7 +30,7 @@
   border: 1px solid var(--black);
   border-radius: 5px;
   background-color: transparent;
-  color: #acacac;
+  color: var(--ac-grey);
   cursor: pointer;
 }
 .select option {

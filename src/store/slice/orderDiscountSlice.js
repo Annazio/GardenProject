@@ -1,8 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-// const write = (data) => localStorage.setItem('cart', JSON.stringify(data));
-
-
 const initialState ={
     list: [],
     userPhoneNumber: ""

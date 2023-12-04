@@ -18,6 +18,9 @@ export default function ProductItem({
 }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [isHovered, setIsHovered] = useState(false);
+  const discount = useCalculateDiscount(price, discont_price);
+
   const addProduct = () => {
     dispatch(addToCart(id));
     toast(`Added to the shopping cart!`, {
@@ -35,10 +38,6 @@ export default function ProductItem({
       },
     });
   };
-
-  const [isHovered, setIsHovered] = useState(false);
-
-  const discount = useCalculateDiscount(price, discont_price);
 
   function handleSingleProduct(id) {
     dispatch(getProductId(id));
@@ -60,8 +59,6 @@ export default function ProductItem({
           src={"http://localhost:3333" + image}
           alt={title}
           className={style.product_img}
-          // className={`${style.product_img} ${isHovered ? style.hovered : ""}`}
-          // onClick={() => handleSingleProduct(id)}
         />
       </div>
       {isHovered && (
@@ -77,7 +74,7 @@ export default function ProductItem({
           {discont_price && (
             <p className={style.actual_price}>
               {discont_price}
-             <span>$</span>
+              <span>$</span>
             </p>
           )}
 
@@ -97,9 +94,8 @@ export default function ProductItem({
             <p className={style.discount}>-{discount}%</p>
           )}
         </div>
-       
+
         <h3 className={style.product_title}>{title}</h3>
-        
       </div>
     </div>
   );

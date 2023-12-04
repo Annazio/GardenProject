@@ -11,12 +11,10 @@ export default function Discount() {
           <div className={style.image_wrapper}>
             <img src={dwarf} alt="Dwarf" />
           </div>
-
           <div>
             <h4 className={style.discount_title}>
               5% off <span>on the first order</span>
             </h4>
-
             <PhoneForm
               placeholderInput="+49"
               typeInput="tel"

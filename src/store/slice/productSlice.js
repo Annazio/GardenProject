@@ -10,13 +10,13 @@ const initialState = {
 export const fetchProducts = createAsyncThunk(
   "product/fetchProduct",
   async (_, { rejectWithValue }) => {
-    try{
-    const response = await fetch("http://localhost:3333/products/all");
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch("http://localhost:3333/products/all");
+      const data = await response.json();
+      return data;
     } catch (error) {
       console.error(error);
-      return rejectWithValue({ message: "error fetch all products"})
+      return rejectWithValue({ message: "error fetch all products" });
     }
   }
 );
@@ -49,37 +49,40 @@ export const productSlice = createSlice({
         ...elem,
         show: {
           ...elem.show,
-          price: (
-            (elem.discont_price && elem.discont_price >= payload.min && elem.discont_price <= payload.max) ||
-            (!elem.discont_price && elem.price >= payload.min && elem.price <= payload.max)
-          )
+          price:
+            (elem.discont_price &&
+              elem.discont_price >= payload.min &&
+              elem.discont_price <= payload.max) ||
+            (!elem.discont_price &&
+              elem.price >= payload.min &&
+              elem.price <= payload.max),
         },
       }));
     },
-    discountHandler(state, {payload}){
+    discountHandler(state, { payload }) {
       state.list = state.list.map((elem) => ({
         ...elem,
         show: {
           ...elem.show,
           checked: payload ? !!elem.discont_price : true,
-        }
+        },
       }));
     },
-    sort(state, {payload}){
-      if (payload === 1){
-       state.list.sort((a, b) => a.title.localeCompare(b.title))
-      }else if (payload === 2){
-        state.list.sort((a, b) => b.title.localeCompare(a.title))
-      }else if (payload === 3) {
-        state.list.sort((a, b) =>
-          (a.discont_price || a.price) - (b.discont_price || b.price)
+    sort(state, { payload }) {
+      if (payload === 1) {
+        state.list.sort((a, b) => a.title.localeCompare(b.title));
+      } else if (payload === 2) {
+        state.list.sort((a, b) => b.title.localeCompare(a.title));
+      } else if (payload === 3) {
+        state.list.sort(
+          (a, b) => (a.discont_price || a.price) - (b.discont_price || b.price)
         );
       } else if (payload === 4) {
-        state.list.sort((a, b) =>
-          (b.discont_price || b.price) - (a.discont_price || a.price)
+        state.list.sort(
+          (a, b) => (b.discont_price || b.price) - (a.discont_price || a.price)
         );
-      }else{
-        state.list.sort((a, b) => a.id - b.id)
+      } else {
+        state.list.sort((a, b) => a.id - b.id);
       }
     },
   },
@@ -113,6 +116,3 @@ export const productSlice = createSlice({
 export default productSlice.reducer;
 export const { getProductId } = productSlice.actions;
 export const { priceFilter, sort, discountHandler } = productSlice.actions;
-
-
-

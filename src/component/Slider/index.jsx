@@ -27,7 +27,6 @@ export default function Slider() {
             <p className={style.categories_title}>All Categories</p>
           </Link>
         </div>
-
         {status === "ready" ? (
           <div className={style.swiper_container}>
             <Swiper

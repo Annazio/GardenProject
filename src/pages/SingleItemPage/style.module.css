@@ -44,20 +44,20 @@
   font-size: 20px;
 }
 .old_price {
-  color: var(--grey);
+  color: var(--8b-grey);
   text-decoration: line-through;
   font-weight: 500;
   font-size: 20px;
 }
 .discount {
-  color: var(--pink);
+  color: var(--accent-color);
   font-size: 28px;
 }
 .discount span {
   font-size: 20px;
 }
 .description {
-  border-top: 1px dashed #c0c0c0;
+  border-top: 1px dashed var(--c0-grey);
   padding-top: 25px;
   font-size: 20px;
 }
@@ -75,17 +75,16 @@
   .product_info {
     margin-top: 40px;
   }
-  .product_wrapper{
+  .product_wrapper {
     padding: 0;
-		gap: 10px;
+    gap: 10px;
   }
-  
 }
 @media (max-width: 400px) {
   .product_info {
     margin-top: 30px;
   }
-  .actual_price{
+  .actual_price {
     font-size: 40px;
   }
 }
