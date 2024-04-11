@@ -51,7 +51,7 @@ export default function SingleItemPage() {
           <div className={style.product_wrapper}>
             <div className={style.image_wrapper}>
               {singleProduct.id ? (
-                <img src={"http://localhost:3333/" + singleProduct.image} />
+                <img src={"https://gardenprojectserver.onrender.com/" + singleProduct.image} />
               ) : (
                 <h3>Loading...</h3>
               )}
