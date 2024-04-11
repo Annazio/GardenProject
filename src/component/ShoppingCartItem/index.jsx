@@ -35,7 +35,7 @@ export default function ShoppingCartItem({
         className={style.image_wrapper}
         onClick={() => handleSingleProduct(id)}
       >
-        <img src={"http://localhost:3333" + image} alt={title} />
+        <img src={"https://gardenprojectserver.onrender.com" + image} alt={title} />
       </div>
 
       <div className={style.title_counter_wrapper}>

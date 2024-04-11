@@ -56,7 +56,7 @@ export default function ProductItem({
         onClick={() => handleSingleProduct(id)}
       >
         <img
-          src={"http://localhost:3333" + image}
+          src={"https://gardenprojectserver.onrender.com" + image}
           alt={title}
           className={style.product_img}
         />

@@ -7,7 +7,7 @@ export default function CategoryItem({ id, image, title }) {
     <Link to={`/categories/${id}`}>
       <div className={style.category_item_wrapper}>
         <div className={style.image_wrapper}>
-          <img src={"http://localhost:3333" + image} alt={title} />
+          <img src={"https://gardenprojectserver.onrender.com" + image} alt={title} />
         </div>
         <h3 className={style.category_title}>{title}</h3>
       </div>
