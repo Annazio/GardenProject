@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/GardenProject/static/css/main.d25f9157.css",
-    "main.js": "/GardenProject/static/js/main.70cee402.js",
-    "static/media/flowers.svg": "/GardenProject/static/media/flowers.d39af1cbbd062bb41792.svg",
-    "static/media/notFound.svg": "/GardenProject/static/media/notFound.76f2e6078ef51ae7ecca3db8c20bdc9a.svg",
-    "static/media/dwarf.svg": "/GardenProject/static/media/dwarf.6f40a66e48a4ae3d43051b4e06df43fe.svg",
-    "static/media/Logo.svg": "/GardenProject/static/media/Logo.5ea733f7db6ce55033115e1fd0b70c7c.svg",
-    "static/media/shopping_bag.svg": "/GardenProject/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
-    "index.html": "/GardenProject/index.html",
-    "main.d25f9157.css.map": "/GardenProject/static/css/main.d25f9157.css.map",
-    "main.70cee402.js.map": "/GardenProject/static/js/main.70cee402.js.map"
+    "main.css": "/static/css/main.101f0161.css",
+    "main.js": "/static/js/main.ce0f3c15.js",
+    "static/media/flowers.svg": "/static/media/flowers.d39af1cbbd062bb41792.svg",
+    "static/media/notFound.svg": "/static/media/notFound.76f2e6078ef51ae7ecca3db8c20bdc9a.svg",
+    "static/media/dwarf.svg": "/static/media/dwarf.6f40a66e48a4ae3d43051b4e06df43fe.svg",
+    "static/media/Logo.svg": "/static/media/Logo.5ea733f7db6ce55033115e1fd0b70c7c.svg",
+    "static/media/shopping_bag.svg": "/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
+    "index.html": "/index.html",
+    "main.101f0161.css.map": "/static/css/main.101f0161.css.map",
+    "main.ce0f3c15.js.map": "/static/js/main.ce0f3c15.js.map"
   },
   "entrypoints": [
-    "static/css/main.d25f9157.css",
-    "static/js/main.70cee402.js"
+    "static/css/main.101f0161.css",
+    "static/js/main.ce0f3c15.js"
   ]
 }
