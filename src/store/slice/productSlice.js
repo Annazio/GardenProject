@@ -11,7 +11,7 @@ export const fetchProducts = createAsyncThunk(
   "product/fetchProduct",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:3333/products/all");
+      const response = await fetch("https://gardenprojectserver.onrender.com/products/all");
       const data = await response.json();
       return data;
     } catch (error) {
@@ -26,7 +26,7 @@ export const fetchSingleProduct = createAsyncThunk(
   async (productId, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `http://localhost:3333/products/${productId}`
+        `https://gardenprojectserver.onrender.com/products/${productId}`
       );
       const data = await response.json();
       return data;

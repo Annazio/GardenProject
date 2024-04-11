@@ -10,7 +10,7 @@ export const fetchCategories = createAsyncThunk(
   "category/fetchCategory",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch("http://localhost:3333/categories/all");
+      const response = await fetch("https://gardenprojectserver.onrender.com/categories/all");
       const data = await response.json();
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const fetchCategoryById = createAsyncThunk(
   "category/fetchCategoryById",
   async (id, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:3333/categories/${id}`);
+      const response = await fetch(`https://gardenprojectserver.onrender.com/categories/${id}`);
       const data = await response.json();
       return data;
     } catch (error) {
