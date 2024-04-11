@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GardenProject/static/css/main.d25f9157.css",
-    "main.js": "/GardenProject/static/js/main.88ee1c8f.js",
+    "main.js": "/GardenProject/static/js/main.6f486989.js",
     "static/media/flowers.svg": "/GardenProject/static/media/flowers.d39af1cbbd062bb41792.svg",
     "static/media/notFound.svg": "/GardenProject/static/media/notFound.76f2e6078ef51ae7ecca3db8c20bdc9a.svg",
     "static/media/dwarf.svg": "/GardenProject/static/media/dwarf.6f40a66e48a4ae3d43051b4e06df43fe.svg",
@@ -9,10 +9,10 @@
     "static/media/shopping_bag.svg": "/GardenProject/static/media/shopping_bag.b47f792fbd9e81f340c65935407c64f2.svg",
     "index.html": "/GardenProject/index.html",
     "main.d25f9157.css.map": "/GardenProject/static/css/main.d25f9157.css.map",
-    "main.88ee1c8f.js.map": "/GardenProject/static/js/main.88ee1c8f.js.map"
+    "main.6f486989.js.map": "/GardenProject/static/js/main.6f486989.js.map"
   },
   "entrypoints": [
     "static/css/main.d25f9157.css",
-    "static/js/main.88ee1c8f.js"
+    "static/js/main.6f486989.js"
   ]
 }
