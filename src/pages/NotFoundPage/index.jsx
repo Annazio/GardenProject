@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import style from "./style.module.css";
 import NotFound from "../../assets/images/notFound.svg";
 import { useLocation, useNavigate } from 'react-router-dom';
